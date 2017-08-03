@@ -1,16 +1,57 @@
-// http://ionicframework.com/docs/theming/
+// For 3d animations
+ion-menu[type='3d'],
+ion-menu[type='3d-open'],
+ion-menu[type='3d-skew'],
+ion-menu[type='3d-fall-down'],
+ion-menu[type='3d-float-up'],
+ion-menu[type='3d-scale-back'],
+ion-menu[type='3d-scale-up'],
+ion-menu[type='3d-rotate-out'],
+ion-menu[type='3d-reverse-slide'],
+ion-menu[type='3d-content-down'] {
+    &.show-menu {
+        .menu-inner {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
 
+ion-menu[type='3d-rotate-out'].show-menu .menu-inner {
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+ion-menu[type='3d-scale-back'] {
+    .show-backdrop {
+        display: block;
+    }
+}
+
+.menu-content-3d,
+.menu-content-3d-open,
+.menu-content-3d-skew,
+.menu-content-3d-fall-down,
+.menu-content-3d-float-up,
+.menu-content-3d-scale-back,
+.menu-content-3d-scale-up,
+.menu-content-3d-rotate-out,
+.menu-content-3d-reverse-slide,
+.menu-content-3d-content-down {
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+// Full with for '3d' sidemenu
+// You can make it permanent by set up $menu-width in variables.scss
+.fullWidthMenu {
+    .menu-inner {
+        width: 100% !important;
+    }
+}
