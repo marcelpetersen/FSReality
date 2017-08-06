@@ -1,30 +1,24 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { SharedProvider } from '../providers/shared/shared.provider';
+ 
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [SharedProvider]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = 'DisclaimerPage';
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, public shared: SharedProvider) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
-    ];
-
+ 
   }
 
   initializeApp() {
@@ -32,13 +26,23 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
+      this.statusBar.backgroundColorByHexString('#006043');
       this.splashScreen.hide();
     });
   }
-
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+ 
+  showStatic(page) { 
+    let modal = this.modalCtrl.create('StaticPage', {page: page});
+    modal.present();
+  }
+   openPage(page) { 
+    this.nav.setRoot(page);
+  }
+   openModal(view: string) { 
+    let modal = this.modalCtrl.create(view);
+    modal.present();
+  }
+  shareApp() {
+    this.shared.SocialSharing.shareVia('I found this awesome app', 'FS Orbit');
   }
 }

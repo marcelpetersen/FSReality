@@ -1,36 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { IonicStorageModule } from '@ionic/storage';
+import { MyApp } from './app.component'; 
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { SocialSharing } from '@ionic-native/social-sharing' 
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ExtendMenuProvider } from '../providers/extend-menu/extend-menu';
+import { SharedProvider } from '../providers/shared/shared.provider';
+import { ApiProvider } from '../providers/api/api.provider';
+import { ConfigProvider } from '../providers/config';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage,
-    ListPage
+    MyApp 
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage,
-    ListPage
+    MyApp 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ExtendMenuProvider
+    ExtendMenuProvider,
+    SharedProvider,
+    ApiProvider,
+    ConfigProvider,
+    SocialSharing
   ]
 })
 export class AppModule {}

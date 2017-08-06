@@ -1,11 +1,28 @@
-page-home {
-ion-content {
-    background-image: url('https://lh3.google.com/u/0/d/0B0ZQQcCu007bdjhyUFFxa3F1Tk0=w1366-h638-iv1');
-    background-size: cover;
-    background-position-x: 50%;
+page-home { 
+  .header-logo {
+      width: 70px !important; 
+    margin-left: 8px; 
   }
-  .bar-buttons,
-  .toolbar-title {
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+        position: absolute;
+    top: 46%;
+    font-size: 1.2em;
+    width: 100%;
+    font-weight: normal;
     color: #fff;
   }
+ 
+img{
+    border: 1px solid #b5b5b5;
+    border-radius: 0px;
+}
+}
+
 }

@@ -1,0 +1,72 @@
+<ion-toolbar no-border class="about-bg custom-toolbar">
+  <ion-navbar transparent class="title-center">
+    <ion-title>About</ion-title>
+    <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+  <ion-segment class="about-segment" [(ngModel)]="segment">
+    <ion-segment-button value="about">
+      About
+    </ion-segment-button>
+    <ion-segment-button value="vission">
+      Vision
+    </ion-segment-button>
+    <ion-segment-button value="mission">
+      Mission
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content class="fs-bg mt154" padding>
+  <div *ngIf="segment == 'about'">
+    <ion-card>
+      <ion-card-content class="justify">
+        After all, the journey of every inspiring life starts with the first few baby step and perhaps that’s how the world sees
+        the manifestation of every single dream in its totality. Although, still in its infancy, FS realty has 5 million
+        Sq.Ft under construction with the projects namely Jaypore located at Vidhyadhar Nagar, The Crest and The Crown located
+        near Jaipur Marriott, The Coronation close to the International Airport, Platinum located behind Clarks Amer on JLN
+        Marg, Pinnacle on Sahakar Marg in the heart of the city and Ursa near International Airport, Tonk Road.
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content class="justify">
+        Let's build upon those small desires and create an abode that truly inspires a good life and gives it a stronger base of
+        the entity called First Stone.
+        <ion-item class="center">
+          <img src="assets/img/about/first-stone-logo.png" class="card-img">
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="segment == 'vission'">
+    <ion-card>
+      <ion-card-content class="justify">
+        With our aim to pay back society for all its blessings, we at First Stone celebrate the freedom to choose a better world
+        for ourselves and a brighter tomorrow. Our vision of ‘Shaping a Better World’ extends across all thoughts and ideas
+        in mind and on paper, in thought and in deeds. Introducing globally renowned brands and professionals was once a
+        mere dream that is now brought to reality and will grow stronger each day. As we finally arrive in full form and
+        glory, today we stand with our heads held high pledging to pave a stronger path for a better future. With our aim
+        to pay back society for all its offerings, we at First Stone celebrate each day and strive to turn the world into
+        a world with a gleaming future.
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+  <div *ngIf="segment == 'mission'">
+    <ion-card>
+      <ion-card-content class="justify">
+        <p>First Stone put in its utmost efforts to raise standards, be it clean titled land, breathtaking designs, outstanding
+          execution, distinguished branding and marketing efforts collectively with an enthusiastic on-ground sales team
+          and has worked brilliantly well to churn out the greatest results for all our patrons and that is what brings us
+          to the first step towards fulfilling First Stone Realty that paves a way ahead.</p>
+        <p>At First Stone, we strive each day to give out tremendous outcome to those endless possibilities that are not just
+          limited to our roles as a premier real estate developer, but also as a socially responsible corporate, which is
+          focusing on education and overall development as the best medium to enrich society.</p>
+        <p>Life Leads Nowhere Without a Strong Vision And a Precise Mission.</p>
+
+      </ion-card-content>
+    </ion-card> 
+  </div>
+</ion-content>

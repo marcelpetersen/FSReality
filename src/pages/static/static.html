@@ -1,0 +1,59 @@
+<ion-content class="fs-bg">
+  <ion-card class="disclaimer-card">
+    <ion-card-header class="border-bottom">
+      <img src="assets/img/logo-color.png" alt="logo" class="disclaimer-logo">
+    </ion-card-header>
+    <ion-card-header class="heading">
+      Privacy Policy
+    </ion-card-header>
+    <ion-card-content class="content-wrap">
+      <div *ngIf="show == 'privacy'">
+        <p class="fz12">
+          We collect basic statistics of visitors using Google Analytics to monitoring the usage of the App. This includes but is not
+          limited to the visitor's country, internet connection and speed, duration of visit, screen visited, operating system,
+          and screen resolutions and colors. However, no personal information is automatically collected such as name, email
+          address and other contact details.
+
+        </p>
+        <div>
+          <ul>
+            <li> Personal information is only received by us when the visitor submits a completed form via our App. These forms
+              are available for visitors to make an enquiry about our properties or services or to sign up with our newsletter.</li>
+            <li>We only collect e-mail addresses of those who communicate with us via e-mail, aggregate information on what pages
+              consumers access or visit, information volunteered by the consumer, such as survey information and/or site
+              registrations, name address and telephone number.</li>
+            <li>The information we collect is used to improve the content of our App, used to notify consumers about updates
+              to our App, used by us to contact consumers for marketing purposes, and is not shared with any third-party
+              organization.
+            </li>
+            <li>We use cookies to record session information of the visitors, which do not store any personal information or
+              browsing habits.</li>
+            <li>We do not partner with or have special relationships with any ad server companies.</li>
+            <li>Our newsletters are sent out to those subscribing to our mailing list and those included in our network. We do
+              not SPAM our visitors. If you do not want to receive e-mail from us in the future, please send us an Unsubscribe
+              email to the above address, or by clicking the Unsubscribe link included in the marketing email.</li>
+            <li>Upon request, consumers can access information recorded with us (e.g. contact details, purchase history, financial
+              transactions) that we maintain with us. This information is securely stored for the sole purpose of running
+              our business. None of the information is shared with any third-parties nor is available to unauthorized users.</li>
+            <li>We have appropriate security measures in place in our physical facilities to protect against the loss, misuse
+              or alteration of information that we may have collected on our App.</li>
+          </ul>
+        </div>
+      </div>
+      <div *ngIf="show == 'tnc'">
+        <p class="fz12">
+          No data found.
+        </p>
+      </div>
+    </ion-card-content>
+    <div class="footer">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-9> </ion-col>
+          <ion-col col-3><button ion-button round color="danger" class="reject-btn" (click)="dismiss()"><ion-icon name="md-close"></ion-icon></button></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-card>
+
+</ion-content>

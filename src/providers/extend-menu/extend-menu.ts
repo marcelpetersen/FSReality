@@ -11,8 +11,8 @@ class Menu3DType extends MenuType {
   constructor(menu: Menu, plt: Platform) {
     super(plt);
 
-    const scale = 0.8;
-    const correction = (plt.width() - (scale * plt.width())) / 2;
+    const scale = 0.65;
+    const correction = (plt.width() - (scale * plt.width())+100) / 2;
     const contentOpenedX = ((plt.width() - correction - 42) * (menu.isRightSide ? -1 : 1)) + 'px';
     const contentAni = new Animation(plt, menu.getContentElement());
 

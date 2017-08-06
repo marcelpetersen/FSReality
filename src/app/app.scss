@@ -55,3 +55,202 @@ ion-menu[type='3d-scale-back'] {
         width: 100% !important;
     }
 }
+
+.title-center .title.title-md {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.bar-buttons,
+    .toolbar-title {
+        color: #fff;
+    }
+   .back-button {
+        z-index: 3 !important;
+        color: #fff !important;
+    }
+ion-menu {
+    ion-content {
+        background-color: #007854 !important;
+    }
+    .item {
+        background-color: transparent !important;
+        color: #fff;
+    }
+    
+    .menu-logo {
+        width: 110px;
+        padding: 20px 0px 0px 11px;
+    }
+    ion-list {
+        width: 60%;
+    }
+    .item-inner {
+        border: none !important;
+    }
+    button.item {
+        font-size: 14px;
+        font-weight: 300;
+        min-height: 3.5rem !important;
+        height: 3.5rem;
+        letter-spacing: 1px;
+    }
+    .mt40 {
+        margin-top: 40px !important;
+    }
+    ion-footer ion-col.col {
+        text-align: center;
+        color: #fff;
+        border-right: 1px solid #006f4d;
+        padding: 5px 0px;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .grid {
+        padding: 0px;
+    }
+}
+
+.no-boxshadow {
+    box-shadow: none !important;
+}
+
+ion-content.fs-bg {
+    background-image: url('../assets/img/bg.jpg');
+    background-size: cover;
+    background-position-x: 50%;
+}
+
+.fs-bg1 {
+    background-image: url('../assets/img/bg.jpg');
+    background-size: cover;
+    background-position-x: 50%;
+}
+
+.fz12 {
+    font-size: 12px !important;
+}
+
+.bar-buttons,
+.toolbar-title {
+    color: #fff;
+}
+
+.disclaimer-card ion-card-header.card-header {
+    text-align: center !important;
+}
+
+.disclaimer-card {
+    border-radius: 0px !important;
+    height: calc(100% - 20px);
+}
+
+.border-bottom {
+    border-bottom: 1px solid #efefef;
+}
+
+.disclaimer-card img {
+    display: inline !important;
+    width: 115px;
+}
+
+.disclaimer-card .heading {
+    font-size: 22px;
+    font-weight: 300;
+    padding: 5px;
+}
+
+.disclaimer-card .content-wrap {}
+
+.disclaimer-card ol {
+    padding: 14px;
+    text-align: justify;
+    margin-top: 0;
+}
+
+.disclaimer-card ol,
+.disclaimer-card ul,
+.disclaimer-card li {
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+}
+
+.disclaimer-card .scroll-content {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.disclaimer-card ion-card-content {
+    overflow: auto;
+    height: calc(100% - 211px);
+    text-align: justify;
+}
+
+.disclaimer-card .ion-grid {
+    position: absolute !important;
+    width: 100%;
+    bottom: 10px;
+}
+
+.disclaimer-card .footer {
+    background: white;
+    position: absolute;
+    width: calc(100% - 20px);
+    bottom: 9px;
+}
+
+.disclaimer-card .accept-btn {
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left: -15px;
+}
+
+.disclaimer-card .reject-btn {
+    width: 100%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-right: -15px;
+    float: right;
+}
+
+.justify {
+    text-align: justify !important;
+}
+
+.center {
+    text-align: center !important;
+}
+
+.site-visit .title{
+    font-size: 24px;
+    color: #fff;
+}
+ .page-heading {
+    font-size: 20px;
+    color: #fff;
+}
+
+.site-visit .footer {
+    background: transparent !important;
+}
+
+.site-visit .accept-btn {
+    background-color: rgba(0, 111, 77, 0.47);
+}
+
+.site-visit {
+    background-image: url('../assets/img/visit/modal-outer-optimized.jpg') !important;
+}
+.site-visit .clos-btn {
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: 100 !important;
+    color: #dedada;
+}
