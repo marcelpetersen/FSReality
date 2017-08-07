@@ -254,3 +254,29 @@ ion-content.fs-bg {
     font-weight: 100 !important;
     color: #dedada;
 }
+
+// About Page
+.about-bg.custom-toolbar {
+        display: block;
+        padding: 0px;
+        min-height: 154px;
+    }
+    .about-content .scroll-content {
+        padding-top: 154px !important;
+    }
+    .about-bg .toolbar-background {
+        background: rgba(97, 93, 93, 0);
+    }
+    .about-bg {
+        background-image: url('../assets/img/about/bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+   
+// End About page
+
+ .header-icon {
+        display: block !important;
+        margin-top: -5px;
+    }

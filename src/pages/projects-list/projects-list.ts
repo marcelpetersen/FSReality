@@ -15,5 +15,8 @@ export class ProjectsListPage {
   ionViewDidLoad() {
     
   }
+  openProject() {
+    this.navCtrl.push('ProjectIntroPage');
+  }
 
 }

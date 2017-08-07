@@ -1,0 +1,47 @@
+page-more-popover {
+    
+    ion-col {
+        text-align: center;
+    }
+    ion-grid {
+        padding: 0px !important;
+    }
+    .popover-col {
+        border-right: 1px solid #eee;
+        padding: 10px 5px;
+        border-bottom: 1px solid #eee;
+    }
+    .popover-col .icon {
+        padding: 6px; 
+    }
+    .popover-col .text {
+        font-size: 12px;
+            padding: 5px 0px;
+    }
+}
+
+.popover-content {
+    bottom: auto !important;
+    width: 300px !important;
+}
+// .popover-arrow {
+//         position: absolute;
+//     display: block;
+//     overflow: hidden;
+//     width: 20px;
+//     height: 10px;
+//     top: 40px;
+// }
+// .popover-arrow::after {
+//         left: 5px;
+//         top: 3px;
+//         border-radius: 3px;
+//         position: absolute;
+//         z-index: 10;
+//         width: 14px;
+//         height: 14px;
+//         background-color: #fff;
+//         content: "";
+//         -webkit-transform: rotate(45deg);
+//         transform: rotate(45deg);
+//     }

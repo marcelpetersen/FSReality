@@ -1,12 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ProjectIntroPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
+ 
 
 @IonicPage()
 @Component({
@@ -14,12 +8,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'project-intro.html',
 })
 export class ProjectIntroPage {
+   @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
+   @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private popoverCtrl: PopoverController) {
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProjectIntroPage');
-  }
+  presentPopover( ) {
+console.log('pop');
+  ;
+    let pop = this.popoverCtrl.create('MorePopoverPage');
 
+let ev = {
+  target : {
+    getBoundingClientRect : () => {
+      return {
+        top: '50' 
+      };
+    }
+  }
+};
+
+pop.present({ev});
+  }
 }

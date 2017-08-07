@@ -1,18 +1,23 @@
-<!--
-  Generated template for the ProjectIntroPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>project-intro</ion-title>
+<ion-toolbar no-border class="about-bg custom-toolbar">
+  <ion-navbar transparent class="title-center">
+    <ion-title (click)="presentPopover($event)">Project Introduction
+       <ion-icon name="ios-arrow-down-outline"  class="header-icon"></ion-icon>
+      </ion-title> 
   </ion-navbar>
+</ion-toolbar>
 
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content class="fs-bg mt154 about-content"   padding>
+  <div>
+    <ion-card>
+      <ion-card-content class="justify">
+        After all, the journey of every inspiring life starts with the first few baby step and perhaps that’s how the world sees
+        the manifestation of every single dream in its totality. Although, still in its infancy, FS realty has 5 million
+        Sq.Ft under construction with the projects namely Jaypore located at Vidhyadhar Nagar, The Crest and The Crown located
+        near Jaipur Marriott, The Coronation close to the International Airport, Platinum located behind Clarks Amer on JLN
+        Marg, Pinnacle on Sahakar Marg in the heart of the city and Ursa near International Airport, Tonk Road.
+      </ion-card-content>
+    </ion-card>
+  </div>
+   
+   
 </ion-content>

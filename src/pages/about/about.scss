@@ -1,28 +1,12 @@
 page-about {
-    .about-bg {
-        background-image: url('../assets/img/about/bg.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-    }
-    .toolbar-background {
-        background: rgba(97, 93, 93, 0);
-    }
-    .custom-toolbar {
-        display: block;
-        padding: 0px;
-    }
     .segment-button {
         color: white !important;
     }
     .about-segment {
         margin-top: 56px !important;
     }
-    .scroll-content {
-        padding-top: 154px !important;
-    }
     .card-img {
         width: 200px;
         display: inline;
-    }
+    } 
 }
