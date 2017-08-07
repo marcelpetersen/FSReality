@@ -8,22 +8,31 @@
     </ion-card-header>
     <ion-card-content class="content-wrap">
       <form action="">
-        <!-- <ion-list>
+         <ion-list>
           <ion-item>
-            <ion-label>Username</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label><ion-icon name="ios-person-outline" item-right></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Name"></ion-input>
           </ion-item>
-
           <ion-item>
-            <ion-label>Password</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-
-          <ion-item>
+            <ion-label><ion-icon name="ios-mail-outline" item-right></ion-icon></ion-label>
             <ion-input type="text" placeholder="Email"></ion-input>
-            <ion-icon name="ios-information-circle-outline"></ion-icon>
           </ion-item>
-        </ion-list> -->
+          <ion-item>
+            <ion-label><ion-icon name="ios-call-outline" item-right></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Phone"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="ios-stats-outline" item-right></ion-icon></ion-label>
+            <ion-select interface="popover">
+                <ion-option [value]="1"> Inbound</ion-option>
+                <ion-option [value]="2"> Outbound</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="ios-calendar-outline" item-right></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Schedule Date and Time"></ion-input>
+          </ion-item>
+        </ion-list> 
       </form>
     </ion-card-content>
     <div class="footer">
