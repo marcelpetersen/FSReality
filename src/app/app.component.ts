@@ -3,7 +3,7 @@ import { Nav, Platform, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedProvider } from '../providers/shared/shared.provider';
- 
+
 
 @Component({
   templateUrl: 'app.html',
@@ -14,11 +14,11 @@ export class MyApp {
 
   rootPage: any = 'DisclaimerPage';
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, public shared: SharedProvider) {
     this.initializeApp();
- 
+
   }
 
   initializeApp() {
@@ -30,15 +30,15 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
- 
-  showStatic(page) { 
-    let modal = this.modalCtrl.create('StaticPage', {page: page});
+
+  showStatic(page) {
+    let modal = this.modalCtrl.create('StaticPage', { page: page });
     modal.present();
   }
-   openPage(page) { 
+  openPage(page) {
     this.nav.setRoot(page);
   }
-   openModal(view: string) { 
+  openModal(view: string) {
     let modal = this.modalCtrl.create(view);
     modal.present();
   }

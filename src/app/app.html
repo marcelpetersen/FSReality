@@ -1,6 +1,6 @@
 <ion-menu [content]="content" type="3d" class="fullWidthMenu">
   <ion-header no-border>
-    <ion-toolbar transparent> 
+    <ion-toolbar transparent>
       <img src="assets/img/logo.png" alt="logo" class="menu-logo">
     </ion-toolbar>
   </ion-header>
@@ -10,39 +10,39 @@
       <button menuClose ion-item (click)="openPage('HomePage')">
          Home
       </button>
-      <button menuClose ion-item  (click)="openPage('ProjectsListPage')">
+      <button menuClose ion-item (click)="openPage('ProjectsListPage')">
          Projects
       </button>
       <button menuClose ion-item (click)="openModal('ScheduleVisitPage')">
          Schedule a Site Visit
       </button>
-      <button menuClose ion-item  (click)="openModal('EmiCalculatorPage')">
+      <button menuClose ion-item (click)="openModal('EmiCalculatorPage')">
          EMI Calculator
       </button>
     </ion-list>
-     <ion-list>
-      <button menuClose ion-item (click)="openPage('AboutPage')" >
+    <ion-list>
+      <button menuClose ion-item (click)="openPage('AboutPage')">
          About
       </button>
-      <button menuClose ion-item  (click)="openPage('ContactPage')">
+      <button menuClose ion-item (click)="openPage('ContactPage')">
          Contact Us
       </button>
       <button menuClose ion-item (click)="openPage('NewsUpdatePage')">
          News & Updates
-      </button> 
+      </button>
     </ion-list>
   </ion-content>
-<ion-footer>
-  <ion-grid>
-    <ion-row>
-      <ion-col menuClose (click)="showStatic('tnc')">T & C</ion-col>
-      <ion-col menuClose (click)="showStatic('privacy')">Privacy</ion-col>
-      <ion-col menuClose (click)="shareApp()">
-        <ion-icon name="share"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-footer>
+  <ion-footer>
+    <ion-grid>
+      <ion-row>
+        <ion-col menuClose (click)="showStatic('tnc')">T & C</ion-col>
+        <ion-col menuClose (click)="showStatic('privacy')">Privacy</ion-col>
+        <ion-col menuClose (click)="shareApp()">
+          <ion-icon name="share"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

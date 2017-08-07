@@ -10,4 +10,4 @@ import { NewsUpdatePage } from './news-update';
     IonicPageModule.forChild(NewsUpdatePage),
   ],
 })
-export class NewsUpdatePageModule {}
+export class NewsUpdatePageModule { }

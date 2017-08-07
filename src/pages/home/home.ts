@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
- 
+
 
 @IonicPage()
 @Component({
@@ -16,7 +16,7 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
   showProjects(category) {
-    this.navCtrl.push('ProjectsListPage', {category: category})
+    this.navCtrl.push('ProjectsListPage', { category: category })
   }
 
 }

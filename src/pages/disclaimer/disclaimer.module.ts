@@ -10,4 +10,4 @@ import { DisclaimerPage } from './disclaimer';
     IonicPageModule.forChild(DisclaimerPage),
   ],
 })
-export class DisclaimerPageModule {}
+export class DisclaimerPageModule { }

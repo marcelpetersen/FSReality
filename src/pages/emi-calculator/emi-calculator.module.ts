@@ -10,4 +10,4 @@ import { EmiCalculatorPage } from './emi-calculator';
     IonicPageModule.forChild(EmiCalculatorPage),
   ],
 })
-export class EmiCalculatorPageModule {}
+export class EmiCalculatorPageModule { }

@@ -10,4 +10,4 @@ import { StaticPage } from './static';
     IonicPageModule.forChild(StaticPage),
   ],
 })
-export class StaticPageModule {}
+export class StaticPageModule { }

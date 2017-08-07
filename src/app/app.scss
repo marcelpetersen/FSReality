@@ -66,13 +66,15 @@ ion-menu[type='3d-scale-back'] {
 }
 
 .bar-buttons,
-    .toolbar-title {
-        color: #fff;
-    }
-   .back-button {
-        z-index: 3 !important;
-        color: #fff !important;
-    }
+.toolbar-title {
+    color: #fff;
+}
+
+.back-button {
+    z-index: 3 !important;
+    color: #fff !important;
+}
+
 ion-menu {
     ion-content {
         background-color: #007854 !important;
@@ -81,7 +83,6 @@ ion-menu {
         background-color: transparent !important;
         color: #fff;
     }
-    
     .menu-logo {
         width: 110px;
         padding: 20px 0px 0px 11px;
@@ -226,11 +227,12 @@ ion-content.fs-bg {
     text-align: center !important;
 }
 
-.site-visit .title{
+.site-visit .title {
     font-size: 24px;
     color: #fff;
 }
- .page-heading {
+
+.page-heading {
     font-size: 20px;
     color: #fff;
 }
@@ -246,6 +248,7 @@ ion-content.fs-bg {
 .site-visit {
     background-image: url('../assets/img/visit/modal-outer-optimized.jpg') !important;
 }
+
 .site-visit .clos-btn {
     font-size: 20px;
     position: absolute;
@@ -257,26 +260,28 @@ ion-content.fs-bg {
 
 // About Page
 .about-bg.custom-toolbar {
-        display: block;
-        padding: 0px;
-        min-height: 154px;
-    }
-    .about-content .scroll-content {
-        padding-top: 154px !important;
-    }
-    .about-bg .toolbar-background {
-        background: rgba(97, 93, 93, 0);
-    }
-    .about-bg {
-        background-image: url('../assets/img/about/bg.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-    }
-   
-// End About page
+    display: block;
+    padding: 0px;
+    min-height: 154px;
+}
 
- .header-icon {
-        display: block !important;
-        margin-top: -5px;
-    }
+.about-content .scroll-content {
+    padding-top: 154px !important;
+}
+
+.about-bg .toolbar-background {
+    background: rgba(97, 93, 93, 0);
+}
+
+.about-bg {
+    background-image: url('../assets/img/about/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+// End About page
+.header-icon {
+    display: block !important;
+    margin-top: -5px;
+}

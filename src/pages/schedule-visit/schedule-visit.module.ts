@@ -10,4 +10,4 @@ import { ScheduleVisitPage } from './schedule-visit';
     IonicPageModule.forChild(ScheduleVisitPage),
   ],
 })
-export class ScheduleVisitPageModule {}
+export class ScheduleVisitPageModule { }

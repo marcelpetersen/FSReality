@@ -3,7 +3,7 @@ import { Platform, Menu, MenuType, MenuController, Animation } from 'ionic-angul
 
 @Injectable()
 export class ExtendMenuProvider {
-  constructor() {}
+  constructor() { }
 }
 
 // Default 3D menu type
@@ -12,7 +12,7 @@ class Menu3DType extends MenuType {
     super(plt);
 
     const scale = 0.65;
-    const correction = (plt.width() - (scale * plt.width())+100) / 2;
+    const correction = (plt.width() - (scale * plt.width()) + 100) / 2;
     const contentOpenedX = ((plt.width() - correction - 42) * (menu.isRightSide ? -1 : 1)) + 'px';
     const contentAni = new Animation(plt, menu.getContentElement());
 
@@ -125,7 +125,7 @@ class Menu3DScaleBackType extends MenuType {
 
     backdropApi.fromTo('opacity', 0.01, 0.35);
     this.ani.add(backdropApi);
-    
+
     menu.getContentElement().parentElement.style.perspective = (plt.width() * 3) + 'px';
     menu.getContentElement().style.zIndex = '-2';
 

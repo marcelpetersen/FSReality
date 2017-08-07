@@ -1,5 +1,4 @@
 page-more-popover {
-    
     ion-col {
         text-align: center;
     }
@@ -12,11 +11,11 @@ page-more-popover {
         border-bottom: 1px solid #eee;
     }
     .popover-col .icon {
-        padding: 6px; 
+        padding: 6px;
     }
     .popover-col .text {
         font-size: 12px;
-            padding: 5px 0px;
+        padding: 5px 0px;
     }
 }
 
@@ -24,6 +23,7 @@ page-more-popover {
     bottom: auto !important;
     width: 300px !important;
 }
+
 // .popover-arrow {
 //         position: absolute;
 //     display: block;

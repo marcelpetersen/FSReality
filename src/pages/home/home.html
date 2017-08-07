@@ -1,5 +1,5 @@
 <ion-header no-border>
-  <ion-navbar transparent> 
+  <ion-navbar transparent>
     <img src="assets/img/logo.png" alt="logo" class="header-logo">
     <button ion-button menuToggle end>
       <ion-icon name="menu"></ion-icon>
@@ -7,17 +7,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-background-page fs-bg"> 
+<ion-content class="card-background-page fs-bg">
 
   <ion-card class="no-boxshadow" (click)="showProjects('residential')">
-    <img src="assets/img/home/commercial.jpg"/>
-    <div class="card-title">Residential Projects </div> 
-  </ion-card>
-  
-  <ion-card class="no-boxshadow" (click)="showProjects('commercial')">
-    <img src="assets/img/home/residential.jpg"/>
-    <div class="card-title">Commercial Projects</div> 
+    <img src="assets/img/home/commercial.jpg" />
+    <div class="card-title">Residential Projects </div>
   </ion-card>
 
- 
+  <ion-card class="no-boxshadow" (click)="showProjects('commercial')">
+    <img src="assets/img/home/residential.jpg" />
+    <div class="card-title">Commercial Projects</div>
+  </ion-card>
+
+
 </ion-content>

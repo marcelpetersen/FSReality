@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, ViewController } from 'ionic-angular';
- 
+
 @IonicPage()
 @Component({
   selector: 'page-emi-calculator',
@@ -12,9 +12,9 @@ export class EmiCalculatorPage {
   }
 
   ionViewDidLoad() {
-    
+
   }
-  
+
   dismiss() {
     this.viewCtrl.dismiss();
   }
