@@ -22,7 +22,6 @@ export class ProjectIntroPage {
   }
   getProjectDetails()
   {
-    console.log(this.projId);
     this.apiProvider.getProjectIntro(this.projId).subscribe(data => {
       this.projIntro = data;
     }, err => {

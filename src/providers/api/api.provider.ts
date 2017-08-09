@@ -41,6 +41,14 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
+  getSpecDetails(specId, projId): Observable<any>{
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.get(`${baseURL}project/${projId}/specification/${specId}`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
   handleError(error) {
     console.error(error);
     return Observable.throw(error || 'Server error');
