@@ -7,12 +7,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'contact.html',
 })
 export class ContactPage {
-
+  public drawerOptions: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    this.drawerOptions = {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ContactPage');
+    };
   }
 
 }

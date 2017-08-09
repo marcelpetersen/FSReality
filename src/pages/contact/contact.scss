@@ -1,1 +1,8 @@
-page-contact {}
+page-contact {
+    contact-drawer {
+        background-color: #34495e !important;
+    }
+    contact-drawer .content {
+        padding: 20px;
+    }
+}

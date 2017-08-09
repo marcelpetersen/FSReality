@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
-import { MyApp } from './app.component'; 
+import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
-import { SocialSharing } from '@ionic-native/social-sharing' 
+import { SocialSharing } from '@ionic-native/social-sharing'
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ExtendMenuProvider } from '../providers/extend-menu/extend-menu';
 import { SharedProvider } from '../providers/shared/shared.provider';
@@ -14,7 +14,7 @@ import { ConfigProvider } from '../providers/config';
 
 @NgModule({
   declarations: [
-    MyApp 
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -23,12 +23,12 @@ import { ConfigProvider } from '../providers/config';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp 
+    MyApp
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ExtendMenuProvider,
     SharedProvider,
     ApiProvider,
@@ -36,4 +36,4 @@ import { ConfigProvider } from '../providers/config';
     SocialSharing
   ]
 })
-export class AppModule {}
+export class AppModule { }
