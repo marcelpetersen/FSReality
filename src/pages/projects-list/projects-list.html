@@ -1,6 +1,6 @@
 <ion-header no-border>
   <ion-navbar class="title-center" transparent>
-    <ion-title>{{(type == 'residential' ? 'Residential' : (type == 'commercial' ? 'Commercial': ''))}} Projects</ion-title>
+    <ion-title>{{category}} Projects</ion-title>
     <button ion-button menuToggle end>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -10,22 +10,11 @@
   <div class="page-heading" *ngIf="type == 'residential'" padding>Where do you want your dream home?</div>
   <ion-grid>
     <ion-row>
-      <ion-col col-6 (click)="openProject()">
-        <img src="./assets/img/about/bg.jpg" alt="">
-        <div class="project-name">The Crest</div>
+      <ion-col col-6 (click)="openProject(project.id)" *ngFor="let project of projects">
+        <img src="{{project.url}}" alt="">
+        <div class="project-name">{{project.name}}</div>
       </ion-col>
-      <ion-col col-6 (click)="openProject()">
-        <img src="./assets/img/about/bg.jpg" alt="">
-        <div class="project-name">The Crown</div>
-      </ion-col>
-      <ion-col col-6 (click)="openProject()">
-        <img src="./assets/img/about/bg.jpg" alt="">
-        <div class="project-name">The Crest</div>
-      </ion-col>
-      <ion-col col-6 (click)="openProject()">
-        <img src="./assets/img/about/bg.jpg" alt="">
-        <div class="project-name">The Crown</div>
-      </ion-col>
+      
     </ion-row>
   </ion-grid>
 </ion-content>

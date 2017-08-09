@@ -7,12 +7,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'more-popover.html',
 })
 export class MorePopoverPage {
-
+  public projId: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.projId = navParams.get('projId');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MorePopoverPage');
   }
-
+  openSpecifications(projId){
+    this.navCtrl.push('ProjectSpecPage', { projId: projId })
+  }
 }

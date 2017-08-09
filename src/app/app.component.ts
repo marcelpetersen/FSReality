@@ -12,15 +12,22 @@ import { SharedProvider } from '../providers/shared/shared.provider';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'DisclaimerPage';
-
+  rootPage: any;
   pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, public shared: SharedProvider) {
+    shared.LS.get('isDisclaimerAccepted').then((data: any) => {
+      if (!data) {
+        this.rootPage = 'DisclaimerPage';
+      } else {
+        this.rootPage = 'HomePage';
+      } 
+    });
     this.initializeApp();
 
   }
-
+  
+  
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

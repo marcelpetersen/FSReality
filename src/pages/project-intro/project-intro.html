@@ -10,11 +10,15 @@
   <div>
     <ion-card>
       <ion-card-content class="justify">
-        After all, the journey of every inspiring life starts with the first few baby step and perhaps that’s how the world sees
-        the manifestation of every single dream in its totality. Although, still in its infancy, FS realty has 5 million
-        Sq.Ft under construction with the projects namely Jaypore located at Vidhyadhar Nagar, The Crest and The Crown located
-        near Jaipur Marriott, The Coronation close to the International Airport, Platinum located behind Clarks Amer on JLN
-        Marg, Pinnacle on Sahakar Marg in the heart of the city and Ursa near International Airport, Tonk Road.
+        <h1>{{projIntro.project_name}}</h1>
+        <p>{{projIntro.city}} {{projIntro.state}}</p>
+        <h2>{{projIntro.projectUnitType}}</h2>
+        <p><b>Status: </b>{{projIntro.status}}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content class="justify" [innerHTML] = "projIntro.introductions">
+        
       </ion-card-content>
     </ion-card>
   </div>
