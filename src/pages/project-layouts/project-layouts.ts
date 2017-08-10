@@ -1,84 +1,66 @@
-import { Component, ViewChild, ElementRef  } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController, ModalController } from 'ionic-angular';
 import { SharedProvider } from '../../providers/shared/shared.provider';
 import { ApiProvider } from '../../providers/api/api.provider';
 import { GalleryModal } from 'ionic-gallery-modal';
 
-@IonicPage()
+@IonicPage({
+  name: 'ProjectLayoutsPage',
+  segment: 'project/layout/:projId'
+})
 @Component({
   selector: 'page-project-layouts',
   templateUrl: 'project-layouts.html',
   providers: [SharedProvider]
 })
 export class ProjectLayoutsPage {
-  @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
-  @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
-  public layouts:any = [];
-  public floorPlans:any = [];
-  public unitPlans:any = [];
+  public layouts: any = [];
+  public floorPlans: any = [];
+  public unitPlans: any = [];
   private _projId: any;
-  constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider,  public apiProvider: ApiProvider, private modalCtrl: ModalController) {
+  constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider, private modalCtrl: ModalController) {
     this._projId = navParams.get('projId');
   }
 
   ionViewDidLoad() {
     this.getLayouts();
-   
+
   }
   getLayouts() {
-    this.apiProvider.getLayouts(this._projId).subscribe(data=> {
+    this.apiProvider.getLayouts(this._projId).subscribe(data => {
       this.layouts = data;
-       this.createPhotos();
-    }, err=> {
+      this.createPhotos();
+    }, err => {
       console.log(err.status);
     })
   }
-  createPhotos()
-  {
-    for(let i = 0; i < this.layouts.length; i++)
-    {
-      if(this.layouts[i].layouts_slug == 'floor-plans')
-        {
-          this.floorPlans.push({
-            url: this.layouts[i].url,
-          });
-        }
-      if(this.layouts[i].layouts_slug == 'unit-plans')
-        {
-          this.unitPlans.push({
-            url: this.layouts[i].url,
-          });
-        }
+  createPhotos() {
+    for (let i = 0; i < this.layouts.length; i++) {
+      if (this.layouts[i].layouts_slug == 'floor-plans') {
+        this.floorPlans.push({
+          url: this.layouts[i].url,
+        });
+      }
+      if (this.layouts[i].layouts_slug == 'unit-plans') {
+        this.unitPlans.push({
+          url: this.layouts[i].url,
+        });
+      }
     }
   }
-  
-  openFloorPlanModal(index)
-  {
+
+  openFloorPlanModal(index) {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.floorPlans,
       initialSlide: 2, // The second image
     });
     modal.present();
   }
-  openUnitPlanModal(index)
-  {
+  openUnitPlanModal(index) {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.unitPlans,
       initialSlide: 2, // The second image
     });
     modal.present();
-  }
-  presentPopover() {
-    let pop = this.popoverCtrl.create('MorePopoverPage', {projId: this._projId });
-    let ev = {
-      target: {
-        getBoundingClientRect: () => {
-          return {
-            top: '50'
-          };
-        }
-      }
-    };
-    pop.present({ ev });
   }
 }

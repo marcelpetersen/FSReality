@@ -7,16 +7,14 @@ import { ApiProvider } from '../../providers/api/api.provider';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: []
+  providers: [SharedProvider]
 })
 export class HomePage {
   public categories: any = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider) {
-  }
-
-  ionViewDidLoad() {
     this.getProjectCategories();
   }
+
   getProjectCategories() {
     this.apiProvider.getProjectCategories().subscribe(data => {
       this.categories = data;
@@ -25,7 +23,7 @@ export class HomePage {
     })
   }
   showProjects(catId, catName) {
-    this.navCtrl.push('ProjectsListPage', { catId: catId, catName: catName })
+    this.navCtrl.push('ProjectsListPage', { catId: catId, catName: catName });
   }
 
 }

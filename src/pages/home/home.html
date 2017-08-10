@@ -9,12 +9,12 @@
 
 <ion-content class="card-background-page fs-bg">
 
-  <ion-card class="no-boxshadow" (click)="showProjects(cat.id, cat.name)"  *ngFor="let cat of categories">
-    <img src="{{cat.url}}" />
+  <ion-card class="no-boxshadow" (click)="showProjects(cat.id, cat.name)" *ngFor="let cat of categories">
+    <img [src]="cat.url" />
     <div class="card-title">{{cat.name}} Projects </div>
   </ion-card>
 
-  
+
 
 
 </ion-content>

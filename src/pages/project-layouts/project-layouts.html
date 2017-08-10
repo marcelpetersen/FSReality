@@ -1,8 +1,6 @@
 <ion-header no-border>
   <ion-navbar transparent class="title-center">
-    <ion-title (click)="presentPopover($event)">Layouts
-      <ion-icon name="ios-arrow-down-outline" class="header-icon"></ion-icon>
-    </ion-title>
+    <popover-header [title]="'Layouts'" [projectId]="projId"></popover-header>
   </ion-navbar>
 </ion-header>
 <ion-content class="card-background-page fs-bg">

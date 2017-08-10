@@ -11,10 +11,10 @@
   <ion-grid>
     <ion-row>
       <ion-col col-6 (click)="openProject(project.id)" *ngFor="let project of projects">
-        <img src="{{project.url}}" alt="">
+        <img [src]="project.url" alt="">
         <div class="project-name">{{project.name}}</div>
       </ion-col>
-      
+
     </ion-row>
   </ion-grid>
 </ion-content>

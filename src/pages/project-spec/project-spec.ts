@@ -2,47 +2,33 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { SharedProvider } from '../../providers/shared/shared.provider';
 import { ApiProvider } from '../../providers/api/api.provider';
-@IonicPage()
+@IonicPage({
+  name: 'ProjectSpecPage',
+  segment: 'project/specification/:projId'
+})
 @Component({
   selector: 'page-project-spec',
   templateUrl: 'project-spec.html',
   providers: [SharedProvider]
 })
 export class ProjectSpecPage {
-  @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
-  @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
-  public sepecifications:any = [];
-  public projId:any;
-  constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider,  public apiProvider: ApiProvider) {
+  public specifications: any = [];
+  public projId: any;
+  constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider) {
     this.projId = navParams.get('projId');
   }
 
   ionViewDidLoad() {
     this.getSpecifications();
   }
-  getSpecifications()
-  {
-    this.apiProvider.getProjectSpec(this.projId).subscribe(data=> {
-      this.sepecifications = data;
-    }, err=> {
+  getSpecifications() {
+    this.apiProvider.getProjectSpec(this.projId).subscribe(data => {
+      this.specifications = data;
+    }, err => {
       console.log(err.status);
     })
   }
-  openSpecDetails(specId)
-  {
+  openSpecDetails(specId) {
     this.navCtrl.push('ProjectSpecDetailsPage', { specId: specId, projId: this.projId })
-  }
-  presentPopover() {
-    let pop = this.popoverCtrl.create('MorePopoverPage', {projId: this.projId });
-    let ev = {
-      target: {
-        getBoundingClientRect: () => {
-          return {
-            top: '50'
-          };
-        }
-      }
-    };
-    pop.present({ ev });
   }
 }
