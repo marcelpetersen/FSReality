@@ -30,4 +30,8 @@ export class MorePopoverPage {
   {
     this.navCtrl.push('ProjectGalleryPage', { projId: projId });
   }
+  openUpdates(projId)
+  {
+    this.navCtrl.push('ProjectUpdatesPage', {projId: projId});
+  }
 }
