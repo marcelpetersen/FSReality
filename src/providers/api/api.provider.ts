@@ -49,6 +49,33 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
+  getLayouts(projId)
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.get(`${baseURL}project/${projId}/layouts`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+  getGalleryImages(projId)
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.get(`${baseURL}project/${projId}/gallery`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+  getAmenities(projId)
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.get(`${baseURL}project/${projId}/amenities`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
   handleError(error) {
     console.error(error);
     return Observable.throw(error || 'Server error');

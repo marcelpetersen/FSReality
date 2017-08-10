@@ -1,0 +1,20 @@
+<ion-header no-border>
+  <ion-navbar transparent class="title-center">
+    <ion-title (click)="presentPopover($event)">Project Sepecifications
+      <ion-icon name="ios-arrow-down-outline" class="header-icon"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="fs-bg">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let spec of sepecifications" (click)="openSpecDetails(spec.id)">
+        <div class="spec-image">
+          <img src="{{spec.image}}" alt="">
+        </div>
+        <div class="spec-name">{{spec.name}}</div>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+</ion-content>

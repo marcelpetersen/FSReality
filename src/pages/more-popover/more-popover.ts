@@ -18,4 +18,16 @@ export class MorePopoverPage {
   openSpecifications(projId){
     this.navCtrl.push('ProjectSpecPage', { projId: projId })
   }
+  openAmenities(projId)
+  {
+    this.navCtrl.push('ProjectAmenitiesPage', { projId: projId });
+  }
+  openLayouts(projId)
+  {
+    this.navCtrl.push('ProjectLayoutsPage', { projId: projId });
+  }
+  openGallery(projId)
+  {
+    this.navCtrl.push('ProjectGalleryPage', { projId: projId });
+  }
 }

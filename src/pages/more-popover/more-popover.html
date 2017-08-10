@@ -26,15 +26,15 @@
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col col-4 class="popover-col">
+    <ion-col col-4 class="popover-col" (click) = "openAmenities(projId)">
       <div class="icon">
-        <ion-icon name="ios-options-outine"></ion-icon>
+        <ion-icon name="ios-options-outline"></ion-icon>
       </div>
       <div class="text">
         Amenities
       </div>
     </ion-col>
-    <ion-col col-4 class="popover-col">
+    <ion-col col-4 class="popover-col" (click) = "openLayouts(projId)">
       <div class="icon">
         <ion-icon name="heart"></ion-icon>
       </div>
@@ -44,7 +44,7 @@
     </ion-col>
     <ion-col col-4 class="popover-col">
       <div class="icon">
-        <ion-icon name="ios-images-outline"></ion-icon>
+        <ion-icon name="ios-images-outline" (click)="openGallery(projId)"></ion-icon>
       </div>
       <div class="text">
         Gallery

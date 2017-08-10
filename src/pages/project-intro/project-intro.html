@@ -1,4 +1,4 @@
-<ion-toolbar no-border class="about-bg custom-toolbar">
+<ion-toolbar no-border class="about-bg custom-toolbar" [style.background-image]="getBackground(projIntro.projectImage)">
   <ion-navbar transparent class="title-center">
     <ion-title (click)="presentPopover($event)">Project Introduction
       <ion-icon name="ios-arrow-down-outline" class="header-icon"></ion-icon>

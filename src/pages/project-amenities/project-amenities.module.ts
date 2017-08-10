@@ -10,4 +10,4 @@ import { ProjectAmenitiesPage } from './project-amenities';
     IonicPageModule.forChild(ProjectAmenitiesPage),
   ],
 })
-export class ProjectAmenitiesPageModule { }
+export class ProjectAmenitiesPageModule {}

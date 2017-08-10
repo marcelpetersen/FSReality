@@ -1,0 +1,19 @@
+page-project-spec-details {
+    .card-md p{
+        color: #fff;
+        margin-top: 20%;
+    }
+    .spec-image {
+        background: #fff;
+        padding: 2% 30%;
+    }
+    .spec-image img{
+        width: 165px;
+        height: 120px;
+    }
+    .disclaimer-card ion-card-content {
+        overflow: auto;
+        height: calc(100% - 230px);
+        text-align: justify;
+    }
+}

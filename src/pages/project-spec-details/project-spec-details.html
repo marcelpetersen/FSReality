@@ -1,0 +1,16 @@
+<ion-content class="site-visit">
+  <ion-card class="disclaimer-card fs-bg1">
+    <ion-card-header class="title">
+      {{specification.name}}
+      <button ion-button color="whitec" class="clos-btn" clear (click)="dismiss()">
+       <ion-icon name="md-close"></ion-icon>
+    </button>
+    </ion-card-header>
+    <ion-card-content class="content-wrap">
+      <p [innerHtml]="specification.description"></p>
+    </ion-card-content>
+    <div class="spec-image">
+      <img src="{{specification.image}}">
+    </div>
+  </ion-card>
+</ion-content>

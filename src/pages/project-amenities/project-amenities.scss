@@ -1,1 +1,22 @@
-page-project-amenities {}
+page-project-amenities {
+    .segment-button {
+        color: white !important;
+    }
+    .about-segment {
+        margin-top: 56px !important;
+
+    }
+    .amenity-image {
+        background: #fff;
+        height: 135px;
+    }
+    .amenity-image img{
+        width: 87px;
+        height: 80px;
+        margin: 2% 25%;
+    }
+    .amenity-name {
+        padding: 3%;
+    }
+    
+}

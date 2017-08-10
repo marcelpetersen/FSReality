@@ -1,0 +1,25 @@
+<ion-header no-border>
+  <ion-navbar transparent class="title-center">
+    <ion-title (click)="presentPopover($event)">Layouts
+      <ion-icon name="ios-arrow-down-outline" class="header-icon"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="card-background-page fs-bg">
+  <div class="card-title">Floor Plans</div>
+  <ion-slides pager="true" parallax="true" padding>
+    <span *ngFor="let layout of layouts;  let index = index">
+      <ion-slide *ngIf="layout.layouts_slug == 'floor-plans'" >
+        <img src="{{layout.url}}" (click)="openFloorPlanModal(index)">
+      </ion-slide>
+    </span>
+  </ion-slides>
+  <div class="card-title">Unit Plans</div>
+  <ion-slides pager="true" parallax="true" padding>
+    <span *ngFor="let layout of layouts">
+      <ion-slide *ngIf="layout.layouts_slug == 'unit-plans';  let index = index" >
+        <img src="{{layout.url}}" (click)="openUnitPlanModal(index)">
+      </ion-slide>
+    </span>
+  </ion-slides>
+</ion-content>
