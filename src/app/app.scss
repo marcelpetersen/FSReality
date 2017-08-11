@@ -103,6 +103,9 @@ ion-menu {
     .mt40 {
         margin-top: 40px !important;
     }
+    .mt0 {
+        margin-top: 0px !important;
+    }
     ion-footer ion-col.col {
         text-align: center;
         color: #fff;
@@ -204,7 +207,8 @@ ion-content.fs-bg {
     bottom: 9px;
 }
 
-.disclaimer-card .accept-btn {
+.disclaimer-card .accept-btn,
+.emi-card .accept-btn {
     width: 100%;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -283,4 +287,26 @@ ion-content.fs-bg {
 .header-icon {
     display: block !important;
     margin-top: -5px;
+}
+
+.fs-form ion-item {
+    background: transparent !important;
+    border-bottom: 0px solid #627d75 !important;
+    padding-left: 0px;
+    color: #fff !important;
+    box-shadow: none !important;
+    margin-bottom: 10px;
+}
+
+.fs-form ion-label img {
+    width: 20px !important;
+}
+
+.fs-form ion-input {
+    border-bottom: 1px solid #91b5be;
+}
+
+.emi-card {
+    height: calc(100% - 20px) !important;
+    overflow-y: auto !important;
 }
