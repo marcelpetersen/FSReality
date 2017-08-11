@@ -34,7 +34,9 @@ export class ProjectUpdatesPage {
   }
   getProjectUpdates()
   {
+    this.shared.Loader.show();
     this.apiProvider.getUpates(this.projId).subscribe(data=> {
+      this.shared.Loader.hide();
       this.updates = data;
       this.createPhotos();
     }, err=> {

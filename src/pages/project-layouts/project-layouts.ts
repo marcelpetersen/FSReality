@@ -27,7 +27,9 @@ export class ProjectLayoutsPage {
 
   }
   getLayouts() {
+    this.shared.Loader.show();
     this.apiProvider.getLayouts(this._projId).subscribe(data => {
+      this.shared.Loader.hide();
       this.layouts = data;
       this.createPhotos();
     }, err => {

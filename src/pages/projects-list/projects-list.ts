@@ -24,8 +24,10 @@ export class ProjectsListPage {
     this.getProjects();
   }
   getProjects() {
+    this.shared.Loader.show();
     this.apiProvider.getProjects(this._catId).subscribe(data => {
       this.projects = data;
+      this.shared.Loader.hide();
     }, err => {
       console.error(err);
     })

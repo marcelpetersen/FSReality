@@ -2,40 +2,19 @@ import { Injectable } from '@angular/core';
 import { LoadingController, ToastController, AlertController, IonicApp, Events, Platform } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { SocialSharing } from '@ionic-native/social-sharing';
-
+import { SpinnerDialog } from '@ionic-native/spinner-dialog';
 @Injectable()
 export class SharedProvider {
   private _loading;
   private _toastMsg;
-  constructor(private platform: Platform, private _ionicApp: IonicApp, private _loadingCtrl: LoadingController, private _toastCtrl: ToastController, private _storage: Storage, private _alert: AlertController, private _socialSharing: SocialSharing, public event: Events) { }
+  constructor(private spinnerDialog: SpinnerDialog, private platform: Platform, private _ionicApp: IonicApp, private _loadingCtrl: LoadingController, private _toastCtrl: ToastController, private _storage: Storage, private _alert: AlertController, private _socialSharing: SocialSharing, public event: Events) { }
   //Loader Start 
   public Loader = {
     show: (template?, showBackdrop?) => {
-      this._loading = this._loadingCtrl.create({
-        content: template || 'Please wait...',
-        dismissOnPageChange: true,
-        duration: 3500,
-        showBackdrop: showBackdrop || true
-      });
-      this._loading.present();
+      this.spinnerDialog.show('Please wait', template || 'Please wait', showBackdrop || true );
     },
     hide: () => {
-      this._loading.dismiss();
-      this._loading = null;
-    },
-    prompt: (template?, timer?) => {
-      this.Loader.show(template);
-      setTimeout(() => {
-        this.Loader.hide();
-      }, timer || 3000);
-    },
-    closeIfActive: () => {
-      let activePortal = this._ionicApp._loadingPortal.getActive();
-      if (activePortal) {
-        activePortal.dismiss();
-        this._loading = null;
-        return;
-      }
+      this.spinnerDialog.hide();
     }
   }
   public Toast = {

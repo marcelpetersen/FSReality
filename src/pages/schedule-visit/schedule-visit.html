@@ -7,18 +7,24 @@
     </button>
     </ion-card-header>
     <ion-card-content class="content-wrap">
-      <form action="">
+      <form action="" class="fs-form">
          <ion-list>
           <ion-item>
-            <ion-label><ion-icon name="ios-person-outline" item-right></ion-icon></ion-label>
+            <ion-label>
+              <img src="../assets/icon/name.png">
+            </ion-label>
             <ion-input type="text" placeholder="Name" [(ngModel)]="visitDetails.name" #name="ngModel" name="name"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label><ion-icon name="ios-mail-outline" item-right></ion-icon></ion-label>
+            <ion-label>
+              <img src="../assets/icon/email.png">
+            </ion-label>
             <ion-input type="email" [(ngModel)]="visitDetails.email" #email="ngModel" name="email" placeholder="Email"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label><ion-icon name="ios-call-outline" item-right></ion-icon></ion-label>
+            <ion-label>
+              <img src="../assets/icon/phone.png">
+            </ion-label>
             <ion-input type="number" [(ngModel)]="visitDetails.mobile" #mobile="ngModel" name="mobile" placeholder="Phone"></ion-input>
           </ion-item>
           <ion-item>

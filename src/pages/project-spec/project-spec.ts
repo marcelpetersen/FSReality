@@ -22,8 +22,10 @@ export class ProjectSpecPage {
     this.getSpecifications();
   }
   getSpecifications() {
+    this.shared.Loader.show();
     this.apiProvider.getProjectSpec(this.projId).subscribe(data => {
       this.specifications = data;
+      this.shared.Loader.hide();
     }, err => {
       console.log(err.status);
     })

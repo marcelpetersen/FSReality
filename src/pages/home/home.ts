@@ -16,8 +16,10 @@ export class HomePage {
   }
 
   getProjectCategories() {
+    this.shared.Loader.show();
     this.apiProvider.getProjectCategories().subscribe(data => {
       this.categories = data;
+      this.shared.Loader.hide();
     }, err => {
       console.error(err);
     })
