@@ -95,6 +95,24 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
+  getProjectBrochure(projId)
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.get(`${baseURL}project/${projId}/brochure`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+  downloadBrochure(data)
+  {
+    let headers = new Headers({ 'Content-Type': 'application/json' }); 
+    return this.http.post(`${crmURL}downloadBrochure`, JSON.stringify(data), { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
   getCrmProjects()
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
@@ -107,7 +125,7 @@ export class ApiProvider {
   saveCrmInquiry(data)
   {
     let headers = new Headers({ 'Content-Type': 'application/json' }); 
-    return this.http.post(`${crmURL}/externalInquirySave`, JSON.stringify(data), { headers: headers })
+    return this.http.post(`${crmURL}externalInquirySave`, JSON.stringify(data), { headers: headers })
       .map((response: Response) => {
         return response.json();
       })

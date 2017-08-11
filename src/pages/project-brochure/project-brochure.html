@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <ion-navbar transparent class="title-center">
+    <popover-header [title]="'Download Brochure'" [projectId]="projId"></popover-header>
+  </ion-navbar>
+</ion-header>
+<ion-content class="fs-bg">
+  <ion-card>
+    <img [src]="brochure.url"/>
+    <ion-card-content>
+      <form name="emiForm" #emiForm="ngForm" class="fs-form">
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              <img src="../assets/icon/name.png">
+            </ion-label>
+            <ion-input type="text" name="amount" [(ngModel)]="formData.name" #name="ngModel" required placeholder="Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <img src="../assets/icon/email.png">
+            </ion-label>
+            <ion-input type="email" name="email" [(ngModel)]="formData.email" #email="ngModel" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <img src="../assets/icon/phone.png">
+            </ion-label>
+            <ion-input type="number" name="phone" [(ngModel)]="formData.phone" #phone="ngModel" placeholder="Phone"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div class="footer">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-9><button ion-button color="primary" type="submit" class="accept-btn" round (click)="downloadBrochure()">Download Brochure</button></ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

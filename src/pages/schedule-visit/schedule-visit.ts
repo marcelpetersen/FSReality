@@ -33,6 +33,7 @@ export class ScheduleVisitPage {
     this.shared.Loader.show();
     this.apiProvider.saveCrmInquiry(this.visitDetails).subscribe(data => {
         this.shared.Loader.hide();
+        this.shared.Toast.show('Enquiry submitted successfully!');
       }, err => {
         this.shared.Loader.hide();
         this.shared.Toast.show(err);
