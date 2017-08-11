@@ -1,8 +1,9 @@
 page-contact {
-    contact-drawer {
-        background-color: #34495e !important;
+    .scroll {
+        height: 100%
     }
-    contact-drawer .content {
-        padding: 20px;
+    #map {
+        width: 100%;
+        height: 100%;
     }
 }
