@@ -1,0 +1,14 @@
+<ion-header no-border>
+  <ion-navbar transparent class="title-center">
+    <popover-header [title]="'Walkthrough'" [projectId]="projId"></popover-header>
+  </ion-navbar>
+</ion-header>
+<ion-content class="fs-bg">
+  <ion-card *ngFor="let walk of walkthrough;">
+      <ion-card-content class="justify">
+        <iframe width="100%" height="315" [src]="getVideoUrl(walk.walk_through_video_url)" frameborder="0" allowfullscreen></iframe>
+        <h1>{{walk.walk_through_name}}</h1>
+        <p>{{walk.walk_through_video_description}}</p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

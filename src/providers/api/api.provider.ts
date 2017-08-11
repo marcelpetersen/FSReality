@@ -106,7 +106,7 @@ export class ApiProvider {
   }
   saveCrmInquiry(data)
   {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({ 'Content-Type': 'application/json' }); 
     return this.http.post(`${crmURL}/externalInquirySave`, JSON.stringify(data), { headers: headers })
       .map((response: Response) => {
         return response.json();

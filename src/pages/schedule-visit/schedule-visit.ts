@@ -10,7 +10,7 @@ import { ApiProvider } from '../../providers/api/api.provider';
 })
 export class ScheduleVisitPage {
   public projects: any [];
-  public visitDetails:any = [];
+  public visitDetails:any = {};
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider) {
   }
 
