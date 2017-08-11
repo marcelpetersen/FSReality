@@ -97,8 +97,7 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
-  getProjectBrochure(projId)
-  {
+  getProjectBrochure(projId) {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${baseURL}project/${projId}/brochure`, { headers: headers })
       .map((response: Response) => {
@@ -106,17 +105,23 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
-  downloadBrochure(data)
-  {
-    let headers = new Headers({ 'Content-Type': 'application/json' }); 
+  getContact() {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.get(`${baseURL}page/contact-us`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+  downloadBrochure(data) {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
     return this.http.post(`${crmURL}downloadBrochure`, JSON.stringify(data), { headers: headers })
       .map((response: Response) => {
         return response.json();
       })
       .catch(this.handleError);
   }
-  getCrmProjects()
-  {
+  getCrmProjects() {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${crmURL}getProjects`, { headers: headers })
       .map((response: Response) => {
@@ -124,8 +129,7 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
-  saveCrmInquiry(data)
-  {
+  saveCrmInquiry(data) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     return this.http.post(`${crmURL}/externalInquirySave`, JSON.stringify(data), { headers: headers })
       .map((response: Response) => {

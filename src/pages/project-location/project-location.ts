@@ -15,7 +15,6 @@ export class ProjectLocationPage {
   @ViewChild('map') mapElement: ElementRef;
   projId: number;
   map: any;
-  private _iconBase: string = '../assets/icon/map/';
   projectLocation: any = {};
   mapInitialised: boolean = false;
   apiKey: string = 'AIzaSyAVl2x2lJ3PPcOIICl73ZuzYmgEmwl3ELE';
@@ -41,7 +40,7 @@ export class ProjectLocationPage {
   initMap() {
     this.mapInitialised = true;
     this.api.getProjectLocation(this.projId).subscribe(data => {
-      let latLng = new google.maps.LatLng(data.projectLocation.latitude, data.projectLocation.longitude);
+      let latLng = new google.maps.LatLng(data.projectLocation.project_location.latitude, data.projectLocation.project_location.longitude);
       let mapOptions = {
         center: latLng,
         zoom: 16,
@@ -50,12 +49,12 @@ export class ProjectLocationPage {
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
       try {
         data.projectNearbyLocation.forEach(element => {
-          this.addMarker([element.latitude, element.longitude], element.map_pin_name, element.description);
+          this.addMarker([element.latitude, element.longitude], element.map_pin_url, element.description);
         });
       } catch (e) {
         console.error(e)
       }
-      this.addMarker([data.projectLocation.latitude, data.projectLocation.longitude], 'Home', data.projectLocation.description);
+      this.addMarker([data.projectLocation.project_location.latitude, data.projectLocation.project_location.longitude], data.projectLocation.map_pin_url, data.projectLocation.project_location.description);
     }, err => {
       console.error(err);
     })
@@ -65,7 +64,7 @@ export class ProjectLocationPage {
     let marker = new google.maps.Marker({
       map: this.map,
       animation: google.maps.Animation.DROP,
-      icon: `${this._iconBase + icon}.png`,
+      icon: icon,
       position: new google.maps.LatLng(position[0], position[1])
     });
     this.addInfoWindow(marker, content);

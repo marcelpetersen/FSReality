@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -8,14 +8,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MorePopoverPage {
   public projId: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.projId = navParams.get('projId');
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MorePopoverPage');
   }
   pushPage(page: string, projId) {
     this.navCtrl.push(page, { projId: projId })
+    this.viewCtrl.dismiss();
   }
 }

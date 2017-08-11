@@ -1,32 +1,76 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
+import { ApiProvider } from '../../providers/api/api.provider';
+
 declare var google;
-@IonicPage({
-  name: 'ContactPage',
-  segment: 'contact'
-})
+@IonicPage()
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html',
 })
 export class ContactPage {
   @ViewChild('map') mapElement: ElementRef;
-  public map: any;
+  projId: number;
+  map: any;
+  projectLocation: any = {};
+  apiKey: string = 'AIzaSyAVl2x2lJ3PPcOIICl73ZuzYmgEmwl3ELE';
 
-  ionViewDidLoad() {
-    this.loadMap();
+  constructor(public api: ApiProvider, public navParams: NavParams) {
+    this.projId = navParams.get('projId');
+    this.loadGoogleMaps();
   }
-  constructor(public navCtrl: NavController) { }
-  loadMap() {
-
-    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
-    let mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+  loadGoogleMaps() {
+    if (typeof google == "undefined" || typeof google.maps == "undefined") {
+      window['mapInit'] = () => {
+        this.initMap();
+      }
+      let script = document.createElement("script");
+      script.id = "googleMaps";
+      script.src = 'http://maps.google.com/maps/api/js?key=' + this.apiKey + '&callback=mapInit';
+      document.body.appendChild(script);
     }
+    else {
+      this.initMap();
+    }
+  }
+  initMap() {
+    this.api.getContact().subscribe(data => {
+      console.log(data);
+      let mapOptions = {
+        center: new google.maps.LatLng(26.9124, 75.7873),
+        zoom: 11,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      this.addMarker([data.pageContactDetails.contact_details.latitude, data.pageContactDetails.contact_details.longitude], data.pageContactDetails.map_pin_url, data.pageContactDetails.contact_details.description);
+      try {
+        data.projectsLocation.forEach(element => {
+          this.addMarker([element.project_location.latitude, element.project_location.longitude], element.map_pin_url, element.project_location.description);
+        });
+      } catch (e) {
+        console.error(e)
+      }
+    }, err => {
+      console.error(err);
+    })
+  }
 
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+  addMarker(position, icon, content) {
 
+    let marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      icon: icon,
+      position: new google.maps.LatLng(position[0], position[1])
+    });
+    this.addInfoWindow(marker, content);
+  }
+  addInfoWindow(marker, content) {
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
   }
 }
