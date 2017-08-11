@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef  } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController, ModalController } from 'ionic-angular';
 import { SharedProvider } from '../../providers/shared/shared.provider';
 import { ApiProvider } from '../../providers/api/api.provider';
@@ -16,38 +16,35 @@ export class ProjectUpdatesPage {
   public projId: any;
   public updates: any = [];
   public images: any = [];
-  constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider,  public apiProvider: ApiProvider, private modalCtrl: ModalController) {
+  constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider, private modalCtrl: ModalController) {
     this.projId = navParams.get('projId');
   }
 
   ionViewDidLoad() {
     this.getProjectUpdates();
   }
-  createPhotos()
-  {
-    for(let i = 0; i < this.updates.length; i++)
-    {
+  createPhotos() {
+    for (let i = 0; i < this.updates.length; i++) {
       this.images.push({
         url: this.updates[i].url,
       });
     }
   }
-  getProjectUpdates()
-  {
+  getProjectUpdates() {
     this.shared.Loader.show();
-    this.apiProvider.getUpates(this.projId).subscribe(data=> {
+    this.apiProvider.getUpates(this.projId).subscribe(data => {
       this.shared.Loader.hide();
       this.updates = data;
       this.createPhotos();
-    }, err=> {
+    }, err => {
       console.log(err.status);
+      this.shared.Loader.hide();
     })
   }
-  openPopup(index)
-  {
+  openPopup(index) {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.images,
-      initialSlide: 2, // The second image
+      initialSlide: index || 0
     });
     modal.present();
   }

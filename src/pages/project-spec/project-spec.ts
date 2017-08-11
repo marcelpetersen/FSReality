@@ -28,6 +28,7 @@ export class ProjectSpecPage {
       this.shared.Loader.hide();
     }, err => {
       console.log(err.status);
+      this.shared.Loader.hide();
     })
   }
   openSpecDetails(specId) {

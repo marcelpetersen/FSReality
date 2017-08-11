@@ -32,6 +32,7 @@ export class ProjectIntroPage {
       this.projIntro = data;
     }, err => {
       console.log(err.status);
+      this.shared.Loader.hide();
     })
   }
 }

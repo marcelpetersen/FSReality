@@ -8,7 +8,7 @@
   <ion-slides pager="true" parallax="true" padding>
     <span *ngFor="let layout of layouts;  let index = index">
       <ion-slide *ngIf="layout.layouts_slug == 'floor-plans'" >
-        <img src="{{layout.url}}" (click)="openFloorPlanModal(index)">
+        <img [src]="layout.url" (click)="openFloorPlanModal(index)">
       </ion-slide>
     </span>
   </ion-slides>
@@ -16,7 +16,7 @@
   <ion-slides pager="true" parallax="true" padding>
     <span *ngFor="let layout of layouts">
       <ion-slide *ngIf="layout.layouts_slug == 'unit-plans';  let index = index" >
-        <img src="{{layout.url}}" (click)="openUnitPlanModal(index)">
+        <img [src]="layout.url" (click)="openUnitPlanModal(index)">
       </ion-slide>
     </span>
   </ion-slides>

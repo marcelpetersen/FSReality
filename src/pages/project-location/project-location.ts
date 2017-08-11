@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api.provider';
+import { SharedProvider } from '../../providers/shared/shared.provider';
 
 declare var google;
 @IonicPage({
@@ -10,16 +11,16 @@ declare var google;
 @Component({
   selector: 'page-project-location',
   templateUrl: 'project-location.html',
+  providers: [SharedProvider]
 })
 export class ProjectLocationPage {
   @ViewChild('map') mapElement: ElementRef;
   projId: number;
   map: any;
   projectLocation: any = {};
-  mapInitialised: boolean = false;
   apiKey: string = 'AIzaSyAVl2x2lJ3PPcOIICl73ZuzYmgEmwl3ELE';
 
-  constructor(public api: ApiProvider, public navParams: NavParams) {
+  constructor(public api: ApiProvider, public navParams: NavParams, public shared: SharedProvider) {
     this.projId = navParams.get('projId');
     this.loadGoogleMaps();
   }
@@ -38,8 +39,9 @@ export class ProjectLocationPage {
     }
   }
   initMap() {
-    this.mapInitialised = true;
+    this.shared.Loader.show();
     this.api.getProjectLocation(this.projId).subscribe(data => {
+      this.shared.Loader.hide();
       let latLng = new google.maps.LatLng(data.projectLocation.project_location.latitude, data.projectLocation.project_location.longitude);
       let mapOptions = {
         center: latLng,
@@ -57,6 +59,7 @@ export class ProjectLocationPage {
       this.addMarker([data.projectLocation.project_location.latitude, data.projectLocation.project_location.longitude], data.projectLocation.map_pin_url, data.projectLocation.project_location.description);
     }, err => {
       console.error(err);
+      this.shared.Loader.hide();
     })
   }
 

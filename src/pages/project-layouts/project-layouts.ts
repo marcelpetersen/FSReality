@@ -34,6 +34,7 @@ export class ProjectLayoutsPage {
       this.createPhotos();
     }, err => {
       console.log(err.status);
+      this.shared.Loader.hide();
     })
   }
   createPhotos() {
@@ -54,14 +55,14 @@ export class ProjectLayoutsPage {
   openFloorPlanModal(index) {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.floorPlans,
-      initialSlide: 2, // The second image
+      initialSlide: index || 0
     });
     modal.present();
   }
   openUnitPlanModal(index) {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.unitPlans,
-      initialSlide: 2, // The second image
+      initialSlide: index || 0
     });
     modal.present();
   }

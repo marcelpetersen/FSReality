@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { SharedProvider } from '../../providers/shared/shared.provider';
 import { ApiProvider } from '../../providers/api/api.provider';
-import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 @IonicPage({
   name: 'ProjectWalkthroughPage',
   segment: 'project/walkthrough/:projId'
@@ -23,18 +23,17 @@ export class ProjectWalkthroughPage {
   ionViewDidLoad() {
     this.getWalkthroughDetails();
   }
-  getWalkthroughDetails()
-  {
+  getWalkthroughDetails() {
     this.shared.Loader.show();
     this.apiProvider.getWalkthroughDetails(this.projId).subscribe(data => {
       this.walkthrough = data;
       this.shared.Loader.hide();
     }, err => {
       console.log(err.status);
+      this.shared.Loader.hide();
     })
   }
-  getVideoUrl(url)
-  {
+  getVideoUrl(url) {
     this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(url);
     return this.videoUrl;
   }

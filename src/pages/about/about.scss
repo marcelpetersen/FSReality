@@ -6,10 +6,12 @@ page-about {
         margin-top: 56px !important;
     }
     .card-img {
-        width: 200px;
-        display: inline;
+        width: 200px !important;
+        ;
+        display: inline !important;
+        ;
     }
     .about-bg {
-        background-image: url('../assets/img/about/bg.jpg');
+        background-image: linear-gradient(rgba(2, 2, 2, 0.5), rgba(35, 33, 33, 0.37)), url(../assets/img/about/bg.jpg);
     }
 }

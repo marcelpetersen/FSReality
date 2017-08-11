@@ -32,6 +32,7 @@ export class ProjectGalleryPage {
       this.createPhotos();
     }, err => {
       console.log(err.status);
+      this.shared.Loader.hide();
     })
   }
   createPhotos() {
@@ -44,7 +45,7 @@ export class ProjectGalleryPage {
   openPopup(index) {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.images,
-      initialSlide: 2, // The second image
+      initialSlide: index || 0, // The second image
     });
     modal.present();
   }

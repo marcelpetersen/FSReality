@@ -1,12 +1,14 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api.provider';
+import { SharedProvider } from '../../providers/shared/shared.provider';
 
 declare var google;
 @IonicPage()
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html',
+  providers: [SharedProvider]
 })
 export class ContactPage {
   @ViewChild('map') mapElement: ElementRef;
@@ -15,7 +17,7 @@ export class ContactPage {
   projectLocation: any = {};
   apiKey: string = 'AIzaSyAVl2x2lJ3PPcOIICl73ZuzYmgEmwl3ELE';
 
-  constructor(public api: ApiProvider, public navParams: NavParams) {
+  constructor(public api: ApiProvider, public navParams: NavParams, public shared: SharedProvider) {
     this.projId = navParams.get('projId');
     this.loadGoogleMaps();
   }
@@ -34,8 +36,9 @@ export class ContactPage {
     }
   }
   initMap() {
+    this.shared.Loader.show();
     this.api.getContact().subscribe(data => {
-      console.log(data);
+      this.shared.Loader.hide();
       let mapOptions = {
         center: new google.maps.LatLng(26.9124, 75.7873),
         zoom: 11,
@@ -52,6 +55,7 @@ export class ContactPage {
       }
     }, err => {
       console.error(err);
+      this.shared.Loader.hide();
     })
   }
 

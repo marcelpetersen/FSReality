@@ -22,6 +22,7 @@ export class HomePage {
       this.shared.Loader.hide();
     }, err => {
       console.error(err);
+      this.shared.Loader.hide();
     })
   }
   showProjects(catId, catName) {

@@ -11,7 +11,7 @@ export class SharedProvider {
   //Loader Start 
   public Loader = {
     show: (template?, showBackdrop?) => {
-      this.spinnerDialog.show('Please wait', template || 'Please wait', showBackdrop || true );
+      this.spinnerDialog.show('Please wait...', template || 'Please wait', showBackdrop || true);
     },
     hide: () => {
       this.spinnerDialog.hide();

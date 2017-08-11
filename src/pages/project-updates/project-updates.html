@@ -8,10 +8,10 @@
     <ion-row>
       <ion-col col-6 *ngFor="let update of updates; let index = index;">
         <div class="gal-image">
-          <img src="{{update.url}}" alt="" (click)="openPopup(index)">
+          <img [src]="update.url" (click)="openPopup(index)">
         </div>
       </ion-col>
-      
+
     </ion-row>
   </ion-grid>
 </ion-content>

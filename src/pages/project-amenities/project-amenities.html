@@ -3,7 +3,7 @@
     <ion-title (click)="presentPopover($event)">Amenities
       <ion-icon name="ios-arrow-down-outline" class="header-icon"></ion-icon>
     </ion-title>
-  </ion-navbar> 
+  </ion-navbar>
   <ion-segment [(ngModel)]="segment">
     <ion-segment-button value="club-house">
       Club House
@@ -20,34 +20,34 @@
   <div *ngIf="segment == 'club-house'">
     <ion-grid>
       <ion-row>
-        <span *ngFor="let amenity of amenities" col-6>
-            <div class="amenity-image" *ngIf="amenity.amenity_slug == 'club-house'">
-              <img src="{{amenity.url}}" alt="">
-              <div class="amenity-name">{{amenity.amenities_name}}</div>
-            </div>
-        </span>
+        <ion-col col-6 *ngFor="let amenity of categorizedAmenities.clubHouse">
+          <div class="amenity-image">
+            <img [src]="amenity.url" alt="">
+            <div class="amenity-name">{{amenity.amenities_name}}</div>
+          </div>
+        </ion-col>
       </ion-row>
     </ion-grid>
   </div>
   <div *ngIf="segment == 'external-amenities'">
     <ion-row>
-        <span *ngFor="let amenity of amenities" col-6>
-            <div class="amenity-image" *ngIf="amenity.amenity_slug == 'external-amenities'">
-              <img src="{{amenity.url}}" alt="">
-              <div class="amenity-name">{{amenity.amenities_name}}</div>
-            </div>
-        </span>
-      </ion-row>
+      <ion-col col-6 *ngFor="let amenity of categorizedAmenities.externalAmenities">
+        <div class="amenity-image">
+          <img [src]="amenity.url" alt="">
+          <div class="amenity-name">{{amenity.amenities_name}}</div>
+        </div>
+      </ion-col>
+    </ion-row>
   </div>
   <div *ngIf="segment == 'security-n-safety'">
     <ion-row>
-        <span *ngFor="let amenity of amenities" col-6>
-            <div class="amenity-image" *ngIf="amenity.amenity_slug == 'security-and-safety'">
-              <img src="{{amenity.url}}" alt="">
-              <div class="amenity-name">{{amenity.amenities_name}}</div>
-            </div>
-        </span>
-      </ion-row>
+      <ion-col col-6 *ngFor="let amenity of categorizedAmenities.securityAndSafety">
+        <div class="amenity-image">
+          <img [src]="amenity.url" alt="">
+          <div class="amenity-name">{{amenity.amenities_name}}</div>
+        </div>
+      </ion-col>
+    </ion-row>
   </div>
-  
+
 </ion-content>

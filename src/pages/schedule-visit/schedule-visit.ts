@@ -9,8 +9,8 @@ import { ApiProvider } from '../../providers/api/api.provider';
   providers: [SharedProvider]
 })
 export class ScheduleVisitPage {
-  public projects: any [];
-  public visitDetails:any = {};
+  public projects: any[];
+  public visitDetails: any = {};
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider) {
   }
 
@@ -20,23 +20,21 @@ export class ScheduleVisitPage {
   dismiss() {
     this.viewCtrl.dismiss();
   }
-  getProjects()
-  {
+  getProjects() {
     this.apiProvider.getCrmProjects().subscribe(data => {
       this.projects = data;
     }, err => {
       console.log(err.status);
     })
   }
-  scheduleVisit()
-  {
+  scheduleVisit() {
     this.shared.Loader.show();
     this.apiProvider.saveCrmInquiry(this.visitDetails).subscribe(data => {
-        this.shared.Loader.hide();
-        this.shared.Toast.show('Enquiry submitted successfully!');
-      }, err => {
-        this.shared.Loader.hide();
-        this.shared.Toast.show(err);
-      })
+      this.shared.Loader.hide();
+      this.shared.Toast.show('Enquiry submitted successfully!');
+    }, err => {
+      this.shared.Loader.hide();
+      this.shared.Toast.show(err);
+    })
   }
 }

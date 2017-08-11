@@ -4,8 +4,8 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="fs-bg">
-  <ion-card>
-    <img [src]="brochure.url"/>
+  <ion-card class="broucher-card">
+    <img [src]="brochure.url" />
     <ion-card-content>
       <form name="emiForm" #emiForm="ngForm" class="fs-form">
         <ion-list>
@@ -27,11 +27,9 @@
             </ion-label>
             <ion-input type="number" name="phone" [(ngModel)]="formData.phone" #phone="ngModel" placeholder="Phone"></ion-input>
           </ion-item>
-          <ion-item>
-            <button ion-button color="primary" class="download-btn" round (click)="scheduleVisit()">Download Brochure</button>
-          </ion-item>
+          <button ion-button block color="primary" round (click)="downloadBrochure()">Download Brochure</button>
         </ion-list>
-        
+
       </form>
     </ion-card-content>
   </ion-card>

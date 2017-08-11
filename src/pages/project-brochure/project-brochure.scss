@@ -1,6 +1,18 @@
 page-project-brochure {
     .card {
         background: transparent;
+        box-shadow: none !important;
+        text-align: center;
     }
-    
+    .broucher-card img {
+        width: 60%;
+        position: relative;
+        display: inline;
+    }
+    .broucher-card .button {
+        margin-top: 25px !important;
+    }
+    ion-card-content {
+        padding: 0px !important;
+    }
 }
