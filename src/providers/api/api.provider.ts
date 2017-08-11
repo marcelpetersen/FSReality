@@ -12,8 +12,7 @@ export class ApiProvider {
   getProjectCategories(): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${baseURL}projects/project-categories`, { headers: headers })
-      .map((response: Response) =>
-      {
+      .map((response: Response) => {
         return response.json();
       })
       .catch(this.handleError);
@@ -42,7 +41,7 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
-  getSpecDetails(specId, projId): Observable<any>{
+  getSpecDetails(specId, projId): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${baseURL}project/${projId}/specification/${specId}`, { headers: headers })
       .map((response: Response) => {
@@ -50,8 +49,7 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
-  getLayouts(projId)
-  {
+  getLayouts(projId) {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${baseURL}project/${projId}/layouts`, { headers: headers })
       .map((response: Response) => {
@@ -59,8 +57,7 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
-  getGalleryImages(projId)
-  {
+  getGalleryImages(projId) {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${baseURL}project/${projId}/gallery`, { headers: headers })
       .map((response: Response) => {
@@ -68,8 +65,7 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
-  getAmenities(projId)
-  {
+  getAmenities(projId) {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${baseURL}project/${projId}/amenities`, { headers: headers })
       .map((response: Response) => {
@@ -77,8 +73,7 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
-  getUpates(projId)
-  {
+  getUpates(projId) {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${baseURL}project/${projId}/updates`, { headers: headers })
       .map((response: Response) => {
@@ -86,10 +81,17 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
-  getWalkthroughDetails(projId)
-  {
+  getWalkthroughDetails(projId) {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${baseURL}project/${projId}/walk-through`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+  getProjectLocation(projId) {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.get(`${baseURL}project/${projId}/location`, { headers: headers })
       .map((response: Response) => {
         return response.json();
       })
@@ -124,8 +126,8 @@ export class ApiProvider {
   }
   saveCrmInquiry(data)
   {
-    let headers = new Headers({ 'Content-Type': 'application/json' }); 
-    return this.http.post(`${crmURL}externalInquirySave`, JSON.stringify(data), { headers: headers })
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this.http.post(`${crmURL}/externalInquirySave`, JSON.stringify(data), { headers: headers })
       .map((response: Response) => {
         return response.json();
       })
