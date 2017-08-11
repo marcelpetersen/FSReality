@@ -5,6 +5,7 @@ import { SharedProvider } from '../../providers/shared/shared.provider';
 @Component({
   selector: 'page-emi-calculator',
   templateUrl: 'emi-calculator.html',
+  providers: [SharedProvider]
 })
 export class EmiCalculatorPage {
   public emiParameters: any = {};
