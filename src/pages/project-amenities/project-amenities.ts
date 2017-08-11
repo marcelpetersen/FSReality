@@ -21,8 +21,10 @@ export class ProjectAmenitiesPage {
   }
   getAmenities()
   {
+    this.shared.Loader.show();
     this.apiProvider.getAmenities(this._projId).subscribe(data=> {
       this.amenities = data;
+      this.shared.Loader.hide();
     }, err=> {
       console.log(err.status);
     })

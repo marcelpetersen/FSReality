@@ -27,14 +27,11 @@
             </ion-label>
             <ion-input type="number" name="phone" [(ngModel)]="formData.phone" #phone="ngModel" placeholder="Phone"></ion-input>
           </ion-item>
+          <ion-item>
+            <button ion-button color="primary" class="download-btn" round (click)="scheduleVisit()">Download Brochure</button>
+          </ion-item>
         </ion-list>
-        <div class="footer">
-          <ion-grid>
-            <ion-row>
-              <ion-col col-9><button ion-button color="primary" type="submit" class="accept-btn" round (click)="downloadBrochure()">Download Brochure</button></ion-col>
-            </ion-row>
-          </ion-grid>
-        </div>
+        
       </form>
     </ion-card-content>
   </ion-card>

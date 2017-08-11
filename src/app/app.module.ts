@@ -1,3 +1,4 @@
+import { SpinnerDialog } from '@ionic-native/spinner-dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -38,6 +39,7 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
     ApiProvider,
     ConfigProvider,
     SocialSharing,
+    SpinnerDialog,
     { provide: HAMMER_GESTURE_CONFIG, useClass: ionicGalleryModal.GalleryModalHammerConfig }
   ]
 })

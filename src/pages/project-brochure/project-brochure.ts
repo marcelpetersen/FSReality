@@ -21,8 +21,10 @@ export class ProjectBrochurePage {
   }
   getBrochure()
   {
+    this.shared.Loader.show();
     this.apiProvider.getProjectBrochure(this.projId).subscribe(data => {
       this.brochure = data;
+      this.shared.Loader.hide();
     }, err => {
       console.log(err.status);
     })

@@ -25,7 +25,9 @@ export class ProjectGalleryPage {
     this.getGalleryImages();
   }
   getGalleryImages() {
+    this.shared.Loader.show();
     this.apiProvider.getGalleryImages(this._projId).subscribe(data => {
+      this.shared.Loader.hide();
       this.gallery = data;
       this.createPhotos();
     }, err => {

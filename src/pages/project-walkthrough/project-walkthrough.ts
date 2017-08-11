@@ -25,8 +25,10 @@ export class ProjectWalkthroughPage {
   }
   getWalkthroughDetails()
   {
+    this.shared.Loader.show();
     this.apiProvider.getWalkthroughDetails(this.projId).subscribe(data => {
       this.walkthrough = data;
+      this.shared.Loader.hide();
     }, err => {
       console.log(err.status);
     })

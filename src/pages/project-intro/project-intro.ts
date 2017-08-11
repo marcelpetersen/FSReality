@@ -26,7 +26,9 @@ export class ProjectIntroPage {
     this.getProjectDetails();
   }
   getProjectDetails() {
+    this.shared.Loader.show();
     this.apiProvider.getProjectIntro(this.projId).subscribe(data => {
+      this.shared.Loader.hide();
       this.projIntro = data;
     }, err => {
       console.log(err.status);
