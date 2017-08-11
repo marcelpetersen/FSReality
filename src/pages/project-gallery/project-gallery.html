@@ -1,12 +1,9 @@
 <ion-header no-border>
   <ion-navbar transparent class="title-center">
-    <popover-header [title]="'Project Specifications'" [projectId]="projId"></popover-header>
+    <popover-header [title]="'Gallery'" [projectId]="projId"></popover-header>
   </ion-navbar>
 </ion-header>
 <ion-content class="fs-bg">
-  <ion-title (click)="presentPopover($event)">Gallery
-    <ion-icon name="ios-arrow-down-outline" class="header-icon"></ion-icon>
-  </ion-title>
   <ion-grid>
     <ion-row>
       <ion-col col-6 *ngFor="let gal of gallery; let index = index;">

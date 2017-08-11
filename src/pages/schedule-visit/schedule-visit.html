@@ -11,26 +11,25 @@
          <ion-list>
           <ion-item>
             <ion-label><ion-icon name="ios-person-outline" item-right></ion-icon></ion-label>
-            <ion-input type="text" placeholder="Name"></ion-input>
+            <ion-input type="text" placeholder="Name" [(ngModel)]="visitDetails.name" #name="ngModel" name="name"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label><ion-icon name="ios-mail-outline" item-right></ion-icon></ion-label>
-            <ion-input type="text" placeholder="Email"></ion-input>
+            <ion-input type="email" [(ngModel)]="visitDetails.email" #email="ngModel" name="email" placeholder="Email"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label><ion-icon name="ios-call-outline" item-right></ion-icon></ion-label>
-            <ion-input type="text" placeholder="Phone"></ion-input>
+            <ion-input type="number" [(ngModel)]="visitDetails.mobile" #mobile="ngModel" name="mobile" placeholder="Phone"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label><ion-icon name="ios-stats-outline" item-right></ion-icon></ion-label>
-            <ion-select interface="popover">
-                <ion-option [value]="1"> Inbound</ion-option>
-                <ion-option [value]="2"> Outbound</ion-option>
+            <ion-select interface="popover" [(ngModel)]="visitDetails.project" #project="ngModel" name="project">
+                <ion-option [value]="proj.id" *ngFor="let proj of projects"> {{proj.name}}</ion-option>
             </ion-select>
           </ion-item>
           <ion-item>
             <ion-label><ion-icon name="ios-calendar-outline" item-right></ion-icon></ion-label>
-            <ion-input type="text" placeholder="Schedule Date and Time"></ion-input>
+            <ion-datetime displayFormat="MMM DD, YYYY HH:mm"  [(ngModel)]="visitDetails.datetime" #datetime="ngModel" name="datetime"></ion-datetime>
           </ion-item>
         </ion-list> 
       </form>
@@ -38,7 +37,7 @@
     <div class="footer">
       <ion-grid>
         <ion-row>
-          <ion-col col-9><button ion-button color="primary" class="accept-btn" round>Schedule</button></ion-col>
+          <ion-col col-9><button ion-button color="primary" class="accept-btn" round (click)="scheduleVisit()">Schedule</button></ion-col>
         </ion-row>
       </ion-grid>
     </div>

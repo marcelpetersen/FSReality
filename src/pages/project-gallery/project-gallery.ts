@@ -46,17 +46,4 @@ export class ProjectGalleryPage {
     });
     modal.present();
   }
-  presentPopover() {
-    let pop = this.popoverCtrl.create('MorePopoverPage', { projId: this._projId });
-    let ev = {
-      target: {
-        getBoundingClientRect: () => {
-          return {
-            top: '50'
-          };
-        }
-      }
-    };
-    pop.present({ ev });
-  }
 }

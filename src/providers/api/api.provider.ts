@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { baseURL } from '../config';
+import { crmURL } from '../config';
 
 import 'rxjs/Rx';
 @Injectable()
@@ -80,6 +81,33 @@ export class ApiProvider {
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     return this.http.get(`${baseURL}project/${projId}/updates`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+  getWalkthroughDetails(projId)
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.get(`${baseURL}project/${projId}/walk-through`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+  getCrmProjects()
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.get(`${crmURL}getProjects`, { headers: headers })
+      .map((response: Response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+  saveCrmInquiry(data)
+  {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this.http.post(`${crmURL}/externalInquirySave`, JSON.stringify(data), { headers: headers })
       .map((response: Response) => {
         return response.json();
       })

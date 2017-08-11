@@ -18,8 +18,4 @@ export class MorePopoverPage {
   pushPage(page: string, projId) {
     this.navCtrl.push(page, { projId: projId })
   }
-  openUpdates(projId)
-  {
-    this.navCtrl.push('ProjectUpdatesPage', {projId: projId});
-  }
 }
