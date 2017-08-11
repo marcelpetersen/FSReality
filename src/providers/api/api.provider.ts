@@ -105,8 +105,14 @@ export class ApiProvider {
       })
       .catch(this.handleError);
   }
+<<<<<<< HEAD
   saveCrmInquiry(data) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
+=======
+  saveCrmInquiry(data)
+  {
+    let headers = new Headers({ 'Content-Type': 'application/json' }); 
+>>>>>>> e42a1e416b61a36c0915a1ef128ef2d4a238c1d0
     return this.http.post(`${crmURL}/externalInquirySave`, JSON.stringify(data), { headers: headers })
       .map((response: Response) => {
         return response.json();
