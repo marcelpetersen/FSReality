@@ -11,19 +11,19 @@
         <ion-list>
           <ion-item>
             <ion-label>
-              <img src="../assets/icon/rupee.png">
+              <img src="assets/icon/rupee.png">
             </ion-label>
             <ion-input type="number" name="amount" [(ngModel)]="emiParameters.amount" #amount="ngModel" required placeholder="Loan amount"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>
-              <img src="../assets/icon/percent.png">
+              <img src="assets/icon/percent.png">
             </ion-label>
             <ion-input type="number" name="percent" [(ngModel)]="emiParameters.percent" #percent="ngModel" placeholder="Interest Rate"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>
-              <img src="../assets/icon/calendar.png">
+              <img src="assets/icon/calendar.png">
             </ion-label>
             <ion-input type="number" name="tenure" [(ngModel)]="emiParameters.tenure" #tenure="ngModel" placeholder="Loan Tenure (years)"></ion-input>
           </ion-item>
@@ -43,7 +43,7 @@
             Monthday Payment
           </div>
           <div class="value">
-            <img class="value-icon" src="../assets/icon/rupee.png">
+            <img class="value-icon" src="assets/icon/rupee.png">
             <h1 class="value-text">{{result.emi}}</h1>
           </div>
         </ion-item>
@@ -52,7 +52,7 @@
             Total Interest Payable
           </div>
           <div class="value">
-            <img class="value-icon" src="../assets/icon/rupee.png">
+            <img class="value-icon" src="assets/icon/rupee.png">
             <h1 class="value-text">{{result.interest}}</h1>
           </div>
         </ion-item>
@@ -61,7 +61,7 @@
             Total Payment (Pricipal + Interest)
           </div>
           <div class="value">
-            <img class="value-icon" src="../assets/icon/rupee.png">
+            <img class="value-icon" src="assets/icon/rupee.png">
             <h1 class="value-text">{{result.total}}</h1>
           </div>
         </ion-item>

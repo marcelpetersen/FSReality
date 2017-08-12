@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, ModalController } from 'ionic-angular';
+import { Nav, Platform, ModalController, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedProvider } from '../providers/shared/shared.provider';
@@ -15,26 +15,31 @@ export class MyApp {
   rootPage: any;
   pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, public shared: SharedProvider) {
+  constructor(public events: Events, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, public shared: SharedProvider) {
     // shared.LS.get('isDisclaimerAccepted').then((data: any) => {
     //   if (!data) {
     //     this.rootPage = 'DisclaimerPage';
     //   } else {
     //     this.rootPage = 'HomePage';
-    //   } 
+    //   }
     // });
     this.rootPage = 'HomePage';
     this.initializeApp();
-
+    console.log('s8b')
+    events.subscribe('pushPage', (data) => {
+      if (this.nav.getActive().name != data.target) {
+        this.nav.push(data.target, { projId: data.projId })
+      }
+    })
   }
-
+  ionViewDidLoad() {
+  }
 
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
-      this.statusBar.backgroundColorByHexString('#006043');
       this.splashScreen.hide();
     });
   }

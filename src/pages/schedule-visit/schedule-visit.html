@@ -8,36 +8,40 @@
     </ion-card-header>
     <ion-card-content class="content-wrap">
       <form action="" class="fs-form">
-         <ion-list>
+        <ion-list>
           <ion-item>
             <ion-label>
-              <img src="../assets/icon/name.png">
+              <img src="assets/icon/name.png">
             </ion-label>
             <ion-input type="text" placeholder="Name" [(ngModel)]="visitDetails.name" #name="ngModel" name="name"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>
-              <img src="../assets/icon/email.png">
+              <img src="assets/icon/email.png">
             </ion-label>
             <ion-input type="email" [(ngModel)]="visitDetails.email" #email="ngModel" name="email" placeholder="Email"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>
-              <img src="../assets/icon/phone.png">
+              <img src="assets/icon/phone.png">
             </ion-label>
             <ion-input type="number" [(ngModel)]="visitDetails.mobile" #mobile="ngModel" name="mobile" placeholder="Phone"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label><ion-icon name="ios-stats-outline" item-right></ion-icon></ion-label>
+            <ion-label>
+              <ion-icon name="ios-stats-outline" item-right></ion-icon>
+            </ion-label>
             <ion-select interface="popover" [(ngModel)]="visitDetails.project" #project="ngModel" name="project">
-                <ion-option [value]="proj.id" *ngFor="let proj of projects"> {{proj.name}}</ion-option>
+              <ion-option [value]="proj.id" *ngFor="let proj of projects"> {{proj.name}}</ion-option>
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-label><ion-icon name="ios-calendar-outline" item-right></ion-icon></ion-label>
-            <ion-datetime displayFormat="MMM DD, YYYY HH:mm"  [(ngModel)]="visitDetails.site_visit_date" #siteVisitDate="ngModel" name="site_visit_date"></ion-datetime>
+            <ion-label>
+              <ion-icon name="ios-calendar-outline" item-right></ion-icon>
+            </ion-label>
+            <ion-datetime displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="visitDetails.site_visit_date" #siteVisitDate="ngModel" name="site_visit_date"></ion-datetime>
           </ion-item>
-        </ion-list> 
+        </ion-list>
       </form>
     </ion-card-content>
     <div class="footer">

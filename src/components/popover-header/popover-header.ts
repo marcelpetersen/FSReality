@@ -10,17 +10,8 @@ export class PopoverHeaderComponent {
   @Input('projectId') projId: any;
   @Input('title') title: any;
   constructor(public popoverCtrl: PopoverController) { }
-  presentPopover() {
+  presentPopover(ev) {
     let pop = this.popoverCtrl.create('MorePopoverPage', { projId: this.projId });
-    let ev = {
-      target: {
-        getBoundingClientRect: () => {
-          return {
-            top: '50'
-          };
-        }
-      }
-    };
     pop.present({ ev });
   }
 

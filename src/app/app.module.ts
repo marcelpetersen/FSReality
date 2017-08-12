@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
-import { MyApp } from './app.component'; 
+import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SocialSharing } from '@ionic-native/social-sharing'
@@ -21,7 +21,9 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      mode: 'ios'
+    }),
     IonicStorageModule.forRoot(),
     ionicGalleryModal.GalleryModalModule,
     HttpModule

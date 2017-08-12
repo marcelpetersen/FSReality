@@ -14,11 +14,11 @@ import { GalleryModal } from 'ionic-gallery-modal';
   providers: [SharedProvider]
 })
 export class ProjectGalleryPage {
-  private _projId: any;
+  public projId: any;
   public gallery: any = [];
   public images: any = [];
   constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider, private modalCtrl: ModalController) {
-    this._projId = navParams.get('projId');
+    this.projId = navParams.get('projId');
   }
 
   ionViewDidLoad() {
@@ -26,7 +26,7 @@ export class ProjectGalleryPage {
   }
   getGalleryImages() {
     this.shared.Loader.show();
-    this.apiProvider.getGalleryImages(this._projId).subscribe(data => {
+    this.apiProvider.getGalleryImages(this.projId).subscribe(data => {
       this.shared.Loader.hide();
       this.gallery = data;
       this.createPhotos();

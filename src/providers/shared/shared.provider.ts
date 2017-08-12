@@ -14,7 +14,9 @@ export class SharedProvider {
       this.spinnerDialog.show('Please wait...', template || 'Please wait', showBackdrop || true);
     },
     hide: () => {
-      this.spinnerDialog.hide();
+      setTimeout(() => {
+        this.spinnerDialog.hide();
+      }, 500);
     }
   }
   public Toast = {

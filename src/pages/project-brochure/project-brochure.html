@@ -5,25 +5,25 @@
 </ion-header>
 <ion-content class="fs-bg">
   <ion-card class="broucher-card">
-    <img [src]="brochure.url" />
+    <img [src]="brochure?.url" alt="" />
     <ion-card-content>
       <form name="emiForm" #emiForm="ngForm" class="fs-form">
         <ion-list>
           <ion-item>
             <ion-label>
-              <img src="../assets/icon/name.png">
+              <img src="assets/icon/name.png">
             </ion-label>
             <ion-input type="text" name="amount" [(ngModel)]="formData.name" #name="ngModel" required placeholder="Name"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>
-              <img src="../assets/icon/email.png">
+              <img src="assets/icon/email.png">
             </ion-label>
             <ion-input type="email" name="email" [(ngModel)]="formData.email" #email="ngModel" placeholder="Email"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>
-              <img src="../assets/icon/phone.png">
+              <img src="assets/icon/phone.png">
             </ion-label>
             <ion-input type="number" name="phone" [(ngModel)]="formData.phone" #phone="ngModel" placeholder="Phone"></ion-input>
           </ion-item>

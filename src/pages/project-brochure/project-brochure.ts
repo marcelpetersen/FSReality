@@ -9,7 +9,7 @@ import { ApiProvider } from '../../providers/api/api.provider';
   providers: [SharedProvider]
 })
 export class ProjectBrochurePage {
-  public brochure: any = [];
+  public brochure: any = {};
   public projId: any;
   public formData: any = {};
   constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider) {
