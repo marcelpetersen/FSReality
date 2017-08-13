@@ -2,4 +2,12 @@ page-projects-list {
     .project-name {
         color: #fff;
     }
+    .lazy-img-loader {
+        min-height: 100px;
+        width: auto;
+    }
+    .lazy-img-loader img {
+        min-height: 100px;
+        width: 100%;
+    }
 }

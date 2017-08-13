@@ -1,6 +1,10 @@
 page-project-gallery {
-    .gal-image img{
-        width: 165px;
+    .lazy-img-loader {
+        min-height: 100px;
+        width: auto;
+    }
+    .lazy-img-loader img {
         height: 100px;
+        width: 100%;
     }
 }

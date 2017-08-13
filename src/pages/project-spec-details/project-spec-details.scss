@@ -1,15 +1,20 @@
 page-project-spec-details {
-    .card-md p{
+    .content-wrap p {
         color: #fff;
-        margin-top: 20%;
+        margin-top: 10%;
     }
     .spec-image {
-        background: #fff;
-        padding: 2% 30%;
+        padding: 10px 10px;
+        text-align: center;
+        background: white;
+        position: absolute;
+        width: calc(100% - 24px);
+        bottom: 9px;
     }
-    .spec-image img{
-        width: 165px;
-        height: 120px;
+    .spec-image img {
+        width: auto !important;
+        display: inline;
+        min-height: 80px;
     }
     .disclaimer-card ion-card-content {
         overflow: auto;

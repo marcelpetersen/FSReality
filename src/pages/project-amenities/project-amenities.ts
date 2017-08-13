@@ -2,7 +2,10 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController, ModalController } from 'ionic-angular';
 import { SharedProvider } from '../../providers/shared/shared.provider';
 import { ApiProvider } from '../../providers/api/api.provider';
-@IonicPage()
+@IonicPage({
+  name: 'ProjectAmenitiesPage',
+  segment: 'project/amenities/:projId'
+})
 @Component({
   selector: 'page-project-amenities',
   templateUrl: 'project-amenities.html',
@@ -10,11 +13,11 @@ import { ApiProvider } from '../../providers/api/api.provider';
 })
 export class ProjectAmenitiesPage {
   public amenities: any = [];
-  private _projId: any;
+  public projId: any;
   public segment: string = "club-house";
   public categorizedAmenities: any = { clubHouse: [], externalAmenities: [], securityAndSafety: [] }
   constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider) {
-    this._projId = navParams.get('projId');
+    this.projId = navParams.get('projId');
   }
 
   ionViewDidLoad() {
@@ -22,7 +25,7 @@ export class ProjectAmenitiesPage {
   }
   getAmenities() {
     this.shared.Loader.show();
-    this.apiProvider.getAmenities(this._projId).subscribe(data => {
+    this.apiProvider.getAmenities(this.projId).subscribe(data => {
       this.amenities = data;
       this.amenities.forEach(element => {
         if (element.amenity_slug == 'club-house') {
@@ -40,7 +43,7 @@ export class ProjectAmenitiesPage {
     })
   }
   presentPopover() {
-    let pop = this.popoverCtrl.create('MorePopoverPage', { projId: this._projId });
+    let pop = this.popoverCtrl.create('MorePopoverPage', { projId: this.projId });
     let ev = {
       target: {
         getBoundingClientRect: () => {

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ProjectUpdatesPage } from './project-updates';
 import { ComponentsModule } from '../../components/components.module';
+import { LazyLoadImageModule } from 'ng2-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -9,8 +10,9 @@ import { ComponentsModule } from '../../components/components.module';
   ],
   imports: [
     IonicPageModule.forChild(ProjectUpdatesPage),
-    ComponentsModule
-    
+    ComponentsModule,
+    LazyLoadImageModule
+
   ],
 })
-export class ProjectUpdatesPageModule {}
+export class ProjectUpdatesPageModule { }

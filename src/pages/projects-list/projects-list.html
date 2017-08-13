@@ -1,20 +1,19 @@
 <ion-header no-border>
   <ion-navbar class="title-center" transparent>
-    <ion-title>{{category}} Projects</ion-title>
+    <ion-title>{{category}}</ion-title>
     <button ion-button menuToggle end>
       <ion-icon name="menu"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
-<ion-content class="fs-bg">
+<ion-content class="fs-bg" #content>
   <div class="page-heading" *ngIf="type == 'residential'" padding>Where do you want your dream home?</div>
   <ion-grid>
     <ion-row>
-      <ion-col col-6 (click)="openProject(project.id)" *ngFor="let project of projects">
-        <img [src]="project.url" alt="">
+      <ion-col col-6 (click)="openProject(project.id)" class="lazy-img-loader" *ngFor="let project of projects">
+        <img [lazyLoad]="project.url" [scrollObservable]="content.ionScroll" />
         <div class="project-name">{{project.name}}</div>
       </ion-col>
-
     </ion-row>
   </ion-grid>
 </ion-content>

@@ -1,13 +1,18 @@
 page-project-spec {
-    .spec-name {
-        color: #fff;
-    }
     .spec-image {
-        background: #fff;
-        padding: 2% 25%;
+        margin: 0px !important;
+        height: 120px;
+        width: 100%;
+        text-align: center;
+        border-radius: 0px !important;
+        padding: 10px 0px;
     }
-    .spec-image img{
-        width: 87px;
-        height: 80px;
+    .spec-image img {
+        height: 75px;
+        width: 75px;
+        display: inline;
+    }
+    .spec-image .spec-name {
+        padding-top: 5px;
     }
 }

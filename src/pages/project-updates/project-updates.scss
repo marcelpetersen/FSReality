@@ -1,3 +1,10 @@
 page-project-updates {
-
+    .lazy-img-loader {
+        min-height: 100px;
+        width: auto;
+    }
+    .lazy-img-loader img {
+        height: 100px;
+        width: 100%;
+    }
 }

@@ -1,1 +1,36 @@
-page-project-intro {}
+page-project-intro {
+    shrinking-segment-header {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        background-image: linear-gradient(rgba(16, 16, 16, 0.71), rgba(16, 16, 23, 0.2)), url('../assets/img/loading.gif');
+        .ion-toolbar,
+        .toolbar {
+            position: absolute !important;
+            top: 0px !important;
+        }
+    }
+    ion-card-content h1 {
+        margin: 0 0 0px !important;
+        font-size: 20px !important;
+        font-weight: normal !important;
+    }
+    ion-card-content p {
+        margin: -3px 0 8px !important;
+        font-size: 1.4rem !important;
+        color: #666 !important;
+    }
+    ion-card-content h2 {
+        margin: 2px 0 !important;
+        font-size: 13px !important;
+        font-weight: bold !important;
+    }
+    ion-card-content p:last-child {
+        margin-bottom: 0px !important;
+        color: black;
+    }
+}

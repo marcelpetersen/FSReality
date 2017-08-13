@@ -2,25 +2,25 @@
   <ion-row>
     <ion-col col-4 class="popover-col" (click)="pushPage('ProjectIntroPage', projId)">
       <div class="icon">
-        <ion-icon name="ios-eye-outline"></ion-icon>
+        <img [src]="activePage == 'ProjectIntroPage' ? iconPath+'green/intro.png' : iconPath+'intro.png'">
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{active: (activePage == 'ProjectIntroPage')}">
         Introduction
       </div>
     </ion-col>
     <ion-col col-4 class="popover-col" (click)="pushPage('ProjectLocationPage', projId)">
       <div class="icon">
-        <ion-icon name="ios-pin-outline"></ion-icon>
+        <img [src]="activePage == 'ProjectLocationPage' ? iconPath+'green/location.png' : iconPath+'location.png'">
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{active: (activePage == 'ProjectLocationPage')}">
         Location
       </div>
     </ion-col>
     <ion-col col-4 class="popover-col" (click)="pushPage('ProjectSpecPage', projId)">
       <div class="icon">
-        <ion-icon name="ios-star-outline"></ion-icon>
+        <img [src]="activePage == 'ProjectSpecPage' ? iconPath+'green/spec.png' : iconPath+'spec.png'">
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{active: (activePage == 'ProjectSpecPage')}">
         Specification
       </div>
     </ion-col>
@@ -28,25 +28,25 @@
   <ion-row>
     <ion-col col-4 class="popover-col" (click)="pushPage('ProjectAmenitiesPage', projId)">
       <div class="icon">
-        <ion-icon name="ios-options-outline"></ion-icon>
+        <img [src]="activePage == 'ProjectAmenitiesPage' ? iconPath+'green/amenities.png' : iconPath+'amenities.png'">
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{active: (activePage == 'ProjectAmenitiesPage')}">
         Amenities
       </div>
     </ion-col>
     <ion-col col-4 class="popover-col" (click)="pushPage('ProjectLayoutsPage', projId)">
       <div class="icon">
-        <ion-icon name="heart"></ion-icon>
+        <img [src]="activePage == 'ProjectLayoutsPage' ? iconPath+'green/layout.png' : iconPath+'layout.png'">
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{active: (activePage == 'ProjectLayoutsPage')}">
         Layouts
       </div>
     </ion-col>
     <ion-col col-4 class="popover-col" (click)="pushPage('ProjectGalleryPage', projId)">
       <div class="icon">
-        <ion-icon name="ios-images-outline"></ion-icon>
+        <img [src]="activePage == 'ProjectGalleryPage' ? iconPath+'green/gallery.png' : iconPath+'gallery.png'">
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{active: (activePage == 'ProjectGalleryPage')}">
         Gallery
       </div>
     </ion-col>
@@ -54,25 +54,25 @@
   <ion-row>
     <ion-col col-4 class="popover-col" (click)="pushPage('ProjectUpdatesPage', projId)">
       <div class="icon">
-        <ion-icon name="ios-flag-outline"></ion-icon>
+        <img [src]="activePage == 'ProjectUpdatesPage' ? iconPath+'green/update.png' : iconPath+'update.png'">
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{active: (activePage == 'ProjectUpdatesPage')}">
         Update
       </div>
     </ion-col>
     <ion-col col-4 class="popover-col" (click)="pushPage('ProjectBrochurePage', projId)">
       <div class="icon">
-        <ion-icon name="ios-document-outline"></ion-icon>
+        <img [src]="activePage == 'ProjectBrochurePage' ? iconPath+'green/brochure.png' : iconPath+'brochure.png'">
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{active: (activePage == 'ProjectBrochurePage')}">
         Brochure
       </div>
     </ion-col>
     <ion-col col-4 class="popover-col" (click)="pushPage('ProjectWalkthroughPage', projId)">
       <div class="icon">
-        <ion-icon name="heart"></ion-icon>
+        <img [src]="activePage == 'ProjectWalkthroughPage' ? iconPath+'green/walkthrough.png' : iconPath+'walkthrough.png'">
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{active: (activePage == 'ProjectWalkthroughPage')}">
         Walkthrough
       </div>
     </ion-col>

@@ -1,11 +1,14 @@
 <ion-header no-border>
   <ion-navbar transparent class="title-center">
     <popover-header [title]="'Download Brochure'" [projectId]="projId"></popover-header>
+    <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 <ion-content class="fs-bg">
   <ion-card class="broucher-card">
-    <img [src]="brochure?.url" alt="" />
+    <img [src]="brochure?.url" class="project-img" alt="" />
     <ion-card-content>
       <form name="emiForm" #emiForm="ngForm" class="fs-form">
         <ion-list>

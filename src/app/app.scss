@@ -133,6 +133,7 @@ ion-menu {
         text-align: center;
         color: #fff;
         border-right: 1px solid #006f4d;
+        border-top: 1px solid #006f4d;
         padding: 5px 0px;
         font-size: 12px;
         font-weight: 300;
@@ -140,6 +141,10 @@ ion-menu {
     .grid {
         padding: 0px;
     }
+}
+
+.toolbar-ios ion-title {
+    padding: 0 55px 1px !important;
 }
 
 .no-boxshadow {
@@ -255,8 +260,9 @@ ion-content.fs-bg {
 }
 
 .site-visit .title {
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
+    padding-top: 10px;
 }
 
 .page-heading {
@@ -280,9 +286,10 @@ ion-content.fs-bg {
     font-size: 20px;
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: -3px;
     font-weight: 100 !important;
     color: #dedada;
+    height: auto !important;
 }
 
 // About Page
@@ -330,8 +337,10 @@ ion-content.fs-bg {
 }
 
 .emi-card {
-    height: calc(100% - 20px) !important;
-    overflow-y: auto !important;
+    background: transparent;
+    box-shadow: none;
+    margin: 0px !important;
+    width: 100% !important;
 }
 
 gallery-modal ion-content {
@@ -341,26 +350,76 @@ gallery-modal ion-content {
 ion-icon {
     &[class*="ion-md-menu"],
     &[class*="ion-ios-menu"] {
-        // Instead of using the font-based icons
-        // We're applying SVG masks
         mask-size: contain;
         mask-position: 50% 50%;
         mask-repeat: no-repeat;
         background: currentColor;
-        width: 1em;
-        height: 1em;
-        mask-image: url(../assets/icon/menu.png) !important;
+        height: 22px;
+        mask-image: url(../assets/icon/menu.svg) !important;
     } // custom icons 
     &[class*="ion-md-arrow-back"],
     &[class*="ion-md-arrow-back"] {
-        // Instead of using the font-based icons
-        // We're applying SVG masks
         mask-size: contain;
         mask-position: 50% 50%;
         mask-repeat: no-repeat;
         background: currentColor;
-        width: 1em;
-        height: 1em;
         mask-image: url(../assets/icon/back.png) !important;
     }
+    &[class*="ion-md-close"],
+    &[class*="ion-ios-close"] {
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 15px;
+        mask-image: url(../assets/icon/close.svg) !important;
+    }
+}
+
+.list-ios>.item-block:first-child,
+.list-ios>.item-block:last-child {
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.toolbar-title-ios {
+    font-weight: normal !important;
+    font-size: 2.3rem !important;
+}
+
+.list-ios .item-inner {
+    background: none !important;
+}
+
+.lazy-img-loader img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../assets/img/loading.gif');
+    width: 100%;
+    background-size: cover;
+}
+
+.pr0 {
+    padding-right: 0px !important;
+}
+
+.gmnoprint,
+.gm-style-cc {
+    display: none !important;
+}
+
+.toolbar-ios {
+    padding: 4px;
+    min-height: 56px;
+}
+
+ion-modal.EmiCalculatorPage,
+ion-modal.ScheduleVisitPage {
+    padding: 15px 15px !important;
+    background-color: rgba(0, 0, 0, 0.79);
+}
+
+.fs-btn {
+    background-image: url('../assets/img/btn-bg.png');
+    background-repeat: no-repeat;
 }

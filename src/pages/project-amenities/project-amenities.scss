@@ -4,13 +4,12 @@ page-project-amenities {
     }
     .about-segment {
         margin-top: 56px !important;
-
     }
     .amenity-image {
         background: #fff;
         height: 135px;
     }
-    .amenity-image img{
+    .amenity-image img {
         width: 87px;
         height: 80px;
         margin: 2% 25%;
@@ -18,5 +17,20 @@ page-project-amenities {
     .amenity-name {
         padding: 3%;
     }
-    
+    .spec-image {
+        margin: 0px !important;
+        min-height: 120px;
+        width: 100%;
+        text-align: center;
+        border-radius: 0px !important;
+        padding: 10px 0px;
+    }
+    .spec-image img {
+        height: 75px;
+        width: 75px;
+        display: inline;
+    }
+    .spec-image .spec-name {
+        padding-top: 5px;
+    }
 }

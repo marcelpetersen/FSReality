@@ -16,16 +16,18 @@ export class MyApp {
   pages: Array<{ title: string, component: any }>;
 
   constructor(public events: Events, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, public shared: SharedProvider) {
-    // shared.LS.get('isDisclaimerAccepted').then((data: any) => {
-    //   if (!data) {
-    //     this.rootPage = 'DisclaimerPage';
-    //   } else {
-    //     this.rootPage = 'HomePage';
-    //   }
-    // });
-    this.rootPage = 'HomePage';
+    if (platform.is('cordova')) {
+      shared.LS.get('isDisclaimerAccepted').then((data: any) => {
+        if (!data) {
+          this.rootPage = 'DisclaimerPage';
+        } else {
+          this.rootPage = 'HomePage';
+        }
+      });
+    } else {
+      this.rootPage = 'HomePage';
+    }
     this.initializeApp();
-    console.log('s8b')
     events.subscribe('pushPage', (data) => {
       if (this.nav.getActive().name != data.target) {
         this.nav.push(data.target, { projId: data.projId })
@@ -37,8 +39,6 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
@@ -52,7 +52,7 @@ export class MyApp {
     this.nav.setRoot(page);
   }
   openModal(view: string) {
-    let modal = this.modalCtrl.create(view);
+    let modal = this.modalCtrl.create(view, {}, { cssClass: view });
     modal.present();
   }
   shareApp() {

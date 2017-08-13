@@ -7,11 +7,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-background-page fs-bg">
+<ion-content #content class="card-background-page fs-bg">
 
-  <ion-card class="no-boxshadow" (click)="showProjects(cat.id, cat.name)" *ngFor="let cat of categories">
-    <img [src]="cat.url" />
-    <div class="card-title">{{cat.name}} Projects </div>
+  <ion-card class="no-boxshadow lazy-img-loader" (click)="showProjects(cat.id, cat.name)" *ngFor="let cat of categories">
+    <img [lazyLoad]="cat.url" [scrollObservable]="content.ionScroll" />
+    <div class="img-overlay"></div>
+    <div class="card-title">{{cat.name}} </div>
+
   </ion-card>
 
 

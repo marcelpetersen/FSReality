@@ -3,6 +3,21 @@ page-home {
         width: 70px !important;
         margin-left: 8px;
     }
+    .lazy-img-loader img {
+        min-height: 200px;
+    }
+    .img-overlay {
+        background-color: rgba(0, 0, 0, 0.47) !important;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        font-size: 1.2em;
+        width: 100%;
+        font-weight: normal;
+        color: #fff;
+        border: 1px solid #b9baba;
+    }
     .card-background-page {
         ion-card {
             position: relative;

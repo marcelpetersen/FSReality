@@ -2,7 +2,10 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { SharedProvider } from '../../providers/shared/shared.provider';
 import { ApiProvider } from '../../providers/api/api.provider';
-@IonicPage()
+@IonicPage({
+  name: 'ProjectBrochurePage',
+  segment: 'project/brochure/:projId'
+})
 @Component({
   selector: 'page-project-brochure',
   templateUrl: 'project-brochure.html',

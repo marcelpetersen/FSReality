@@ -17,9 +17,9 @@ export class ProjectLayoutsPage {
   public layouts: any = [];
   public floorPlans: any = [];
   public unitPlans: any = [];
-  private _projId: any;
+  public projId: any;
   constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public shared: SharedProvider, public apiProvider: ApiProvider, private modalCtrl: ModalController) {
-    this._projId = navParams.get('projId');
+    this.projId = navParams.get('projId');
   }
 
   ionViewDidLoad() {
@@ -28,7 +28,7 @@ export class ProjectLayoutsPage {
   }
   getLayouts() {
     this.shared.Loader.show();
-    this.apiProvider.getLayouts(this._projId).subscribe(data => {
+    this.apiProvider.getLayouts(this.projId).subscribe(data => {
       this.shared.Loader.hide();
       this.layouts = data;
       this.createPhotos();

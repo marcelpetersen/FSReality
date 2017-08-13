@@ -1,3 +1,25 @@
 popover-header {
-
+    ion-icon {
+        &[class*="ion-ios-arrow-down-outline"],
+        &[class*="ion-md-arrow-down-outline"] {
+            // Instead of using the font-based icons
+            // We're applying SVG masks
+            mask-size: contain;
+            mask-position: 50% 50%;
+            mask-repeat: no-repeat;
+            background: currentColor;
+            height: 22px;
+            mask-image: url(../assets/icon/down.svg) !important;
+        }
+        &[class*="fs-intro"] {
+            // Instead of using the font-based icons
+            // We're applying SVG masks
+            mask-size: contain;
+            mask-position: 50% 50%;
+            mask-repeat: no-repeat;
+            background: currentColor;
+            height: 22px;
+            mask-image: url(../assets/icon/down.svg) !important;
+        }
+    }
 }

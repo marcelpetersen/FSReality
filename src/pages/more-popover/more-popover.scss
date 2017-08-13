@@ -7,41 +7,26 @@ page-more-popover {
     }
     .popover-col {
         border-right: 1px solid #eee;
-        padding: 10px 5px;
+        padding: 18px 5px;
         border-bottom: 1px solid #eee;
     }
-    .popover-col .icon {
-        padding: 6px;
+    .popover-col:nth-child(3n) {
+        border-right: 0px solid #eee !important;
+    }
+    .popover-col img {
+        width: 30px;
     }
     .popover-col .text {
         font-size: 12px;
-        padding: 5px 0px;
+        padding: 1px 0px;
+    }
+    .active {
+        color: #007854 !important;
     }
 }
 
 .popover-content {
     bottom: auto !important;
-    width: 300px !important;
+    min-width: 270px !important;
+    border-radius: 3px !important;
 }
-
-// .popover-arrow {
-//         position: absolute;
-//     display: block;
-//     overflow: hidden;
-//     width: 20px;
-//     height: 10px;
-//     top: 40px;
-// }
-// .popover-arrow::after {
-//         left: 5px;
-//         top: 3px;
-//         border-radius: 3px;
-//         position: absolute;
-//         z-index: 10;
-//         width: 14px;
-//         height: 14px;
-//         background-color: #fff;
-//         content: "";
-//         -webkit-transform: rotate(45deg);
-//         transform: rotate(45deg);
-//     }

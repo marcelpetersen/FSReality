@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PopoverController } from 'ionic-angular';
+import { PopoverController, NavController } from 'ionic-angular';
 
 @Component({
   selector: 'popover-header',
@@ -9,9 +9,9 @@ export class PopoverHeaderComponent {
 
   @Input('projectId') projId: any;
   @Input('title') title: any;
-  constructor(public popoverCtrl: PopoverController) { }
+  constructor(public popoverCtrl: PopoverController, private navCtrl: NavController) { }
   presentPopover(ev) {
-    let pop = this.popoverCtrl.create('MorePopoverPage', { projId: this.projId });
+    let pop = this.popoverCtrl.create('MorePopoverPage', { projId: this.projId, activePage: this.navCtrl.getActive().name });
     pop.present({ ev });
   }
 

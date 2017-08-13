@@ -1,4 +1,4 @@
-<ion-menu [content]="content" type="3d" class="fullWidthMenu">
+<ion-menu [content]="content" type="3d" persistent="true" class="fullWidthMenu">
   <ion-header no-border>
     <ion-toolbar transparent>
       <img src="assets/img/logo.png" alt="logo" class="menu-logo">
@@ -9,6 +9,9 @@
     <ion-list class="mt40">
       <button menuClose ion-item (click)="openPage('HomePage')">
          Home
+      </button>
+      <button menuClose ion-item (click)="openPage('HomePage')">
+         Projects
       </button>
       <button menuClose ion-item (click)="openModal('ScheduleVisitPage')">
          Schedule a Site Visit

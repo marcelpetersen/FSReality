@@ -1,73 +1,73 @@
-<ion-content class="site-visit">
-  <ion-card class="emi-card fs-bg1">
-    <ion-card-header class="title">
-      EMI Calculator
-      <button ion-button color="whitec" class="clos-btn" clear (click)="dismiss()">
-       <ion-icon name="md-close"></ion-icon>
+<ion-header no-border>
+  <ion-toolbar transparent class="title">
+    <ion-title>EMI Calculator</ion-title>
+    <button ion-button end class="dismiss-btn" (click)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
     </button>
-    </ion-card-header>
-    <ion-card-content class="content-wrap">
-      <form name="emiForm" #emiForm="ngForm" (ngSubmit)="calculate(emiForm)" class="fs-form">
-        <ion-list>
-          <ion-item>
-            <ion-label>
-              <img src="assets/icon/rupee.png">
-            </ion-label>
-            <ion-input type="number" name="amount" [(ngModel)]="emiParameters.amount" #amount="ngModel" required placeholder="Loan amount"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <img src="assets/icon/percent.png">
-            </ion-label>
-            <ion-input type="number" name="percent" [(ngModel)]="emiParameters.percent" #percent="ngModel" placeholder="Interest Rate"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <img src="assets/icon/calendar.png">
-            </ion-label>
-            <ion-input type="number" name="tenure" [(ngModel)]="emiParameters.tenure" #tenure="ngModel" placeholder="Loan Tenure (years)"></ion-input>
-          </ion-item>
-        </ion-list>
-        <div class="footer">
-          <ion-grid>
-            <ion-row>
-              <ion-col col-9><button ion-button color="primary" type="submit" class="accept-btn" round> {{!result.emi ? 'Calculate' : 'Recalculate' }}</button></ion-col>
-            </ion-row>
-          </ion-grid>
-        </div>
-      </form>
-
-      <ion-list class="emi-result" *ngIf="result.emi">
+  </ion-toolbar>
+</ion-header>
+<ion-content class="fs-bg">
+  <ion-card class="emi-card pr0" padding>
+    <form name="emiForm" #emiForm="ngForm" (ngSubmit)="calculate(emiForm)" class="fs-form">
+      <ion-list>
         <ion-item>
-          <div class="key">
-            Monthday Payment
-          </div>
-          <div class="value">
-            <img class="value-icon" src="assets/icon/rupee.png">
-            <h1 class="value-text">{{result.emi}}</h1>
-          </div>
+          <ion-label>
+            <img src="assets/icon/rupee.png">
+          </ion-label>
+          <ion-input type="number" name="amount" [(ngModel)]="emiParameters.amount" #amount="ngModel" required placeholder="Loan amount"></ion-input>
         </ion-item>
         <ion-item>
-          <div class="key">
-            Total Interest Payable
-          </div>
-          <div class="value">
-            <img class="value-icon" src="assets/icon/rupee.png">
-            <h1 class="value-text">{{result.interest}}</h1>
-          </div>
+          <ion-label>
+            <img src="assets/icon/percent.png">
+          </ion-label>
+          <ion-input type="number" name="percent" [(ngModel)]="emiParameters.percent" #percent="ngModel" placeholder="Interest Rate"></ion-input>
         </ion-item>
         <ion-item>
-          <div class="key">
-            Total Payment (Pricipal + Interest)
-          </div>
-          <div class="value">
-            <img class="value-icon" src="assets/icon/rupee.png">
-            <h1 class="value-text">{{result.total}}</h1>
-          </div>
+          <ion-label>
+            <img src="assets/icon/calendar.png">
+          </ion-label>
+          <ion-input type="number" name="tenure" [(ngModel)]="emiParameters.tenure" #tenure="ngModel" placeholder="Loan Tenure (years)"></ion-input>
         </ion-item>
-
       </ion-list>
-    </ion-card-content>
+      <div class="footer">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12><button ion-button color="primary" type="submit" class="fs-btn accept-btn submit-button" round> {{!result.emi ? 'Calculate' : 'Recalculate' }}</button></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </form>
+
+    <ion-list class="emi-result" *ngIf="result.emi">
+      <ion-item>
+        <div class="key">
+          Monthday Payment
+        </div>
+        <div class="value">
+          <img class="value-icon" src="assets/icon/rupee.png">
+          <h1 class="value-text">{{result.emi}}</h1>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div class="key">
+          Total Interest Payable
+        </div>
+        <div class="value">
+          <img class="value-icon" src="assets/icon/rupee.png">
+          <h1 class="value-text">{{result.interest}}</h1>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div class="key">
+          Total Payment (Pricipal + Interest)
+        </div>
+        <div class="value">
+          <img class="value-icon" src="assets/icon/rupee.png">
+          <h1 class="value-text">{{result.total}}</h1>
+        </div>
+      </ion-item>
+
+    </ion-list>
 
   </ion-card>
 </ion-content>

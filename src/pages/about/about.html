@@ -1,25 +1,46 @@
-<ion-toolbar no-border class="about-bg custom-toolbar">
-  <ion-navbar transparent class="title-center">
-    <ion-title>About</ion-title>
-    <button ion-button menuToggle end>
+<ion-header no-border>
+
+  <shrinking-segment-header [scrollArea]="myContent" minHeaderHeight="98" headerHeight="190">
+    <ion-toolbar transparent>
+      <ion-title>About</ion-title>
+      <button ion-button menuToggle end>
       <ion-icon name="menu"></ion-icon>
     </button>
-  </ion-navbar>
-  <ion-segment class="about-segment" [(ngModel)]="segment">
-    <ion-segment-button value="about">
-      About
-    </ion-segment-button>
-    <ion-segment-button value="vission">
-      Vision
-    </ion-segment-button>
-    <ion-segment-button value="mission">
-      Mission
-    </ion-segment-button>
-  </ion-segment>
-</ion-toolbar>
+    </ion-toolbar>
+    <ion-segment color="light" mode="md" [(ngModel)]="segment">
+      <ion-segment-button value="about">
+        About
+      </ion-segment-button>
+      <ion-segment-button value="vission">
+        Vision
+      </ion-segment-button>
+      <ion-segment-button value="mission">
+        Mission
+      </ion-segment-button>
+    </ion-segment>
+  </shrinking-segment-header>
+</ion-header>
 
-<ion-content class="fs-bg mt154 about-content" padding>
+<ion-content fullscreen class="fs-bg" #myContent>
   <div *ngIf="segment == 'about'">
+    <ion-card>
+      <ion-card-content class="justify">
+        After all, the journey of every inspiring life starts with the first few baby step and perhaps that’s how the world sees
+        the manifestation of every single dream in its totality. Although, still in its infancy, FS realty has 5 million
+        Sq.Ft under construction with the projects namely Jaypore located at Vidhyadhar Nagar, The Crest and The Crown located
+        near Jaipur Marriott, The Coronation close to the International Airport, Platinum located behind Clarks Amer on JLN
+        Marg, Pinnacle on Sahakar Marg in the heart of the city and Ursa near International Airport, Tonk Road.
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content class="justify">
+        After all, the journey of every inspiring life starts with the first few baby step and perhaps that’s how the world sees
+        the manifestation of every single dream in its totality. Although, still in its infancy, FS realty has 5 million
+        Sq.Ft under construction with the projects namely Jaypore located at Vidhyadhar Nagar, The Crest and The Crown located
+        near Jaipur Marriott, The Coronation close to the International Airport, Platinum located behind Clarks Amer on JLN
+        Marg, Pinnacle on Sahakar Marg in the heart of the city and Ursa near International Airport, Tonk Road.
+      </ion-card-content>
+    </ion-card>
     <ion-card>
       <ion-card-content class="justify">
         After all, the journey of every inspiring life starts with the first few baby step and perhaps that’s how the world sees

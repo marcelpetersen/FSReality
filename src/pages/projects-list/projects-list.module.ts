@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ProjectsListPage } from './projects-list';
+import { LazyLoadImageModule } from 'ng2-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -8,6 +9,7 @@ import { ProjectsListPage } from './projects-list';
   ],
   imports: [
     IonicPageModule.forChild(ProjectsListPage),
+    LazyLoadImageModule
   ],
 })
 export class ProjectsListPageModule { }

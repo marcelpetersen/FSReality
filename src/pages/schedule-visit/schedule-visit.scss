@@ -1,8 +1,8 @@
 page-schedule-visit {
-    .item{
+    .item {
         background-color: transparent;
     }
-    .item-radio{
+    .item-radio {
         background-color: transparent;
     }
     .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
@@ -16,5 +16,31 @@ page-schedule-visit {
         border-bottom-color: #32db64;
         -webkit-box-shadow: inset 0 -1px 0 0 #32db64;
         box-shadow: inset 0 -1px 0 0 rgba(50, 219, 100, 0);
+    }
+    .dismiss-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: transparent;
+    }
+    .submit-button {
+        margin-left: -32px !important;
+    }
+    .emi-card ion-item .item-inner {
+        padding-right: 0px !important;
+    }
+    ion-select button,
+    ion-datetime button {
+        border-bottom: 1px solid #91b5be;
+        margin-left: 25px;
+    }
+    .item-select ion-label,
+    .item-datetime ion-label {
+        flex: initial !important;
+    }
+    .item-select ion-select,
+    .item-datetime ion-datetime {
+        max-width: 100%;
+        width: 100%;
     }
 }

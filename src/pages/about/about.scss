@@ -1,17 +1,21 @@
 page-about {
-    .segment-button {
-        color: white !important;
-    }
-    .about-segment {
-        margin-top: 56px !important;
-    }
-    .card-img {
-        width: 200px !important;
-        ;
-        display: inline !important;
-        ;
-    }
-    .about-bg {
+    shrinking-segment-header {
         background-image: linear-gradient(rgba(2, 2, 2, 0.5), rgba(35, 33, 33, 0.37)), url(../assets/img/about/bg.jpg);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        .ion-toolbar,
+        .toolbar {
+            position: absolute !important;
+            top: 0px !important;
+        }
+        ion-segment {
+            position: absolute;
+            bottom: 0px;
+        }
     }
 }

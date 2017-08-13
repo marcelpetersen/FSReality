@@ -22,19 +22,16 @@ page-emi-calculator {
     .emi-result ion-label {
         margin-bottom: 0px !important;
     }
-    .emi-card .accept-btn {
+    .emi-card ion-item .item-inner {
+        padding-right: 0px !important;
+    }
+    .submit-button {
         margin-left: -32px !important;
     }
-    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
-    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
-        border-bottom-color: #32db64;
-        -webkit-box-shadow: inset 0 -1px 0 0 #32db64;
-        box-shadow: inset 0 -1px 0 0 rgba(50, 219, 100, 0);
-    }
-    .item-ios.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
-    .item-ios.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
-        border-bottom-color: #32db64;
-        -webkit-box-shadow: inset 0 -1px 0 0 #32db64;
-        box-shadow: inset 0 -1px 0 0 rgba(50, 219, 100, 0);
+    .dismiss-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: transparent;
     }
 }

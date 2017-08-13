@@ -1,9 +1,15 @@
-<ion-toolbar no-border class="about-bg custom-toolbar" [style.background-image]="getBackground(projIntro.projectImage)">
-  <ion-navbar transparent class="title-center">
-    <popover-header [title]="'Project Introduction'" [projectId]="projId"></popover-header>
-  </ion-navbar>
-</ion-toolbar>
-<ion-content class="fs-bg mt154 about-content" padding>
+<ion-header no-border>
+  <shrinking-segment-header [style.background-image]="getBackground(projIntro.projectImage)" [scrollArea]="myContent" minHeaderHeight="56"
+    headerHeight="190">
+    <ion-navbar transparent>
+      <popover-header [title]="'Introduction'" [projectId]="projId"></popover-header>
+      <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-navbar>
+  </shrinking-segment-header>
+</ion-header>
+<ion-content class="fs-bg" fullscreen #myContent>
   <div>
     <ion-card>
       <ion-card-content class="justify">
@@ -15,10 +21,7 @@
     </ion-card>
     <ion-card>
       <ion-card-content class="justify" [innerHTML]="projIntro.introductions">
-
       </ion-card-content>
     </ion-card>
   </div>
-
-
 </ion-content>
